@@ -4,6 +4,7 @@ from colorama import Fore #导入字体颜色
 from bson import json_util
 logging.basicConfig(level=logging.DEBUG)
 import prettytable  #导入ASCII格式的表格
+from colorama import init,Fore
 
 #定义参数
 train_date = "2019-06-07"
@@ -35,7 +36,7 @@ print(type(data1))
 
 print(data1["data"]["result"])
 #引入prettytable，创建表格
-table = prettytable.PrettyTable(["车次","出发站","到达站","出发时间","到达时间","历时","商务座和特等座","一等座","二等座","高级软卧","软卧一等卧","动卧","硬卧二等卧","软座","硬座","无座","其他"])
+table = prettytable.PrettyTable(["车次","出发站","到达站","出发时间","到达时间","历时","商务座和特等座","一等座","二等座","高级软卧","软卧一等卧","动卧","硬卧二等卧","软座","硬座","无座","其他","备注"])
 
 #从返回数据的关键字为result的值获取数据
 for i in data1["data"]["result"]:
@@ -103,11 +104,29 @@ for i in data1["data"]["result"]:
     value["qt_num"] = item[22]                                     #其他在22号位置
     value["note"] = item[1]                                        #备注在1号位置
 
+    #值为空的展示
+    for pos in name:
+        if value[pos] == "":
+            value[pos] = "-"
+
     #向表格里添加数据
     tickets = []
-    for ticket in tickets:
-        table.add_row((ticket))
 
+    #先循环数据的条数，在循环每条数据的值
+    count = [] #条数
+    count.append(value)
+    for x in count:
+        table1 = []
+        for y in name:
+            if y == "station_train_code":
+                s = value["station_train_code"]
+                table1.append(s)
+            else:
+                table1.append(value[y])
+        tickets.append(table1)
+
+    for ticket in tickets:
+        table.add_row(ticket)
 
 #打印表格
 print(table)
