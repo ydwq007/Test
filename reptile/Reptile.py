@@ -4,7 +4,8 @@ from colorama import Fore #导入字体颜色
 from bson import json_util
 logging.basicConfig(level=logging.DEBUG)
 import prettytable  #导入ASCII格式的表格
-from colorama import init,Fore
+from stations import chezhan_names,chezhan_code
+
 
 #定义参数
 train_date = "2019-06-07"
@@ -120,6 +121,14 @@ for i in data1["data"]["result"]:
         for y in name:
             if y == "station_train_code":
                 s = value["station_train_code"]
+                table1.append(s)
+            #出发站点转换为汉字
+            elif y == "from_station_name":
+                s = chezhan_names[value["from_station_name"]]
+                table1.append(s)
+            #出发站点转换为汉字
+            elif y == "to_station_name":
+                s = chezhan_names[value["to_station_name"]]
                 table1.append(s)
             else:
                 table1.append(value[y])
