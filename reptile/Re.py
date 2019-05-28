@@ -1,12 +1,8 @@
 #爬虫12306网址
-import re,requests,logging,json
-from colorama import Fore #导入字体颜色
-from bson import json_util
+import requests,logging,json
 logging.basicConfig(level=logging.DEBUG)
 import prettytable  #导入ASCII格式的表格
 from stations import chezhan_code,chezhan_names
-
-
 
 
 #创建表格函数
