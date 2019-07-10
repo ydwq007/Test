@@ -1,0 +1,57 @@
+# -*- coding: utf-8 -*-
+#登录前获取token接口
+import requests,re,json,logging
+# logging.basicConfig(level=logging.DEBUG)
+
+def getToken():
+    #信息头
+    headers = {"Content-Type": "application/json"}
+    #登录页面
+    login_token = "https://testchome.seeyon.com/portal.php?m=user&a=login"
+
+    #请求接口
+    request_token = requests.get(login_token,headers=headers,verify=False) #调用接口（url,参数，类型）#verify=False 跳过认证
+
+    #获取响应数据
+    response_token = request_token.text
+
+    #利用re正则，获取token
+    # findall匹配所有符合的返回列表，
+    # match 和 search 是匹配一次
+    res_tr = r'id="form_token" value="(.*?)"/>'
+    form_token = re.findall(res_tr, response_token) #\u4e00-\u9fa5匹配汉字，A-Z匹配大写英文
+    # form_token = re.findall(r'([\u4e00-\u9fa5]+)\|([A-Z]+)', response_token) #\u4e00-\u9fa5匹配汉字，A-Z匹配大写英文
+
+    #打印响应结果
+    print("---------打印接口响应结果：---------------")
+    # print(response_token) #打印整个响应结果
+    # print(form_token) #打印form_token
+    return form_token
+
+if __name__ == "__main__":
+    getToken()
+
+
+# #信息头
+# headers = {"Content-Type": "application/json"}
+# #登录页面
+# login_token = "https://testchome.seeyon.com/portal.php?m=user&a=login"
+#
+# #请求接口
+# request_token = requests.get(login_token,headers=headers,verify=False) #调用接口（url,参数，类型）#verify=False 跳过认证
+#
+# #获取响应数据
+# response_token = request_token.text
+#
+# #利用re正则，获取token
+# # findall匹配所有符合的返回列表，
+# # match 和 search 是匹配一次
+# res_tr = r'id="form_token" value="(.*?)"/>'
+# form_token = re.findall(res_tr, response_token) #\u4e00-\u9fa5匹配汉字，A-Z匹配大写英文
+# # form_token = re.findall(r'([\u4e00-\u9fa5]+)\|([A-Z]+)', response_token) #\u4e00-\u9fa5匹配汉字，A-Z匹配大写英文
+#
+# #打印响应结果
+# print("---------打印token响应结果：---------------")
+# # print(response_token) #打印整个响应结果
+# print(form_token) #打印form_token
+

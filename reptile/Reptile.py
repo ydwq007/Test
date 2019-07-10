@@ -8,7 +8,7 @@ from stations import chezhan_names,chezhan_code
 
 
 #定义参数
-train_date = "2019-06-07"
+train_date = "2019-07-21"
 from_station = "BJP"
 to_station = "SHH"
 
