@@ -1,0 +1,52 @@
+# -*- coding: utf-8 -*-
+#执行测试案例
+import unittest
+import os
+import time
+import HTMLTestRunnerCN as HTMLTestRunner
+import SendEmail
+
+class RunCase(unittest.TestCase):# 继承unittest.TestCase
+
+    def test_case(self):
+
+        #执行路径
+        casespath = r"D:\IdeaProjects\seeyon\Interface\TestCases" #执行前需检验路径和文件
+        #执行文件
+        casesname = "Login02"
+        #执行时间
+        run_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        #报告名称
+        result_name = "%s_接口测试报告_%s" % (casesname,run_time)
+        #执行人员
+        tester = "魏奇"
+
+        #指定的case所在的路径里寻找所有名称模式匹配pattern的文件并加载其内容
+        suite = unittest.TestSuite()#创建测试套件
+        os.chdir(casespath) #需要执行的case所在路径
+        case_path = os.getcwd() #获取路径
+        all_cases = unittest.defaultTestLoader.discover(case_path,pattern="%s*.py" % casesname) #指定案例脚本
+        for case in all_cases:
+             suite.addTests(case)#把所有的测试用例添加进来
+
+        # #执行并且输出测试报告txt格式
+        # with open(r"D:\IdeaProjects\seeyon\Interface\TestResults\test_result.txt", "w", encoding="utf-8") as result_txt: #测试报告路径
+        #     runner_tests = unittest.TextTestRunner(stream=result_txt,descriptions=result_txt1,verbosity=2) # verbosity执行结果的详细程度，0<1<2，默认1
+        #     runner_tests.run(suite)
+
+        #执行并且输出测试报告html格式
+        # with open(r"D:\IdeaProjects\seeyon\Interface\TestResults\test_result %s.html" % time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), "wb") as result_html: #测试报告路径
+        with open(r"D:\IdeaProjects\seeyon\Interface\TestResults\test_result.html", "wb") as result_html: #测试报告路径
+            runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=result_name,description="案例具体测试情况，请参加附件",
+                                                           tester=tester,verbosity=2)
+            runner_results.run(suite) #执行案例
+
+
+
+        #发送测试报告
+        time.sleep(10)
+        SendEmail.sendemail(2,2)
+
+if __name__=="__main__":
+    unittest.main()#执行所有案例
+

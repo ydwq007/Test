@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 #发送手机或者邮箱验证码接口
 
-import requests,json,re,logging,csv
+import requests,json,re,logging,csv,sys
 from bson import json_util
+sys.path.append(r'D:\IdeaProjects\seeyon\Interface\TestDatas') #跨目录调用需要配置路径
 from BasicDatas import mobile
 # logging.basicConfig(level=logging.DEBUG)
+
 
 #测试环境
 environment1 = "https://testchome.seeyon.com" #测试环境
@@ -59,7 +61,7 @@ def sendcode(param,sendby = "login",type = "mobile"): #参数为参数（手机�
     # print(response_send)
     # print(randcode[0])
     if '"code":1000' in response_send:
-    # if "randcode" in response_send["data"].keys():
+        # if "randcode" in response_send["data"].keys():
         print("获取验证码成功！！！")
         print("验证码为%s" % randcode[0])
         return randcode
@@ -68,7 +70,7 @@ def sendcode(param,sendby = "login",type = "mobile"): #参数为参数（手机�
 
 if __name__ == "__main__":
     try:
-        sendcode()
+        sendcode(mobile)
     except TypeError:
         print("验证码次数超过最多限制")
     except IndexError:
