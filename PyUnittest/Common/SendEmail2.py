@@ -36,11 +36,11 @@ class SendEmails:
     #发送字符串邮件配置
     def email_string(self):
         # #发送固定文件
-        # with open(r"D:\IdeaProjects\seeyon\Interface\TestResults\test_result.html", "rb") as file:#读取二进制
+        # with open(r"D:\IdeaProjects\seeyon\PyUnittest\TestResults\test_result.html", "rb") as file:#读取二进制
         #     mail_body = file.read()
 
         #发送最新文件
-        dir = r"D:\IdeaProjects\seeyon\Interface\TestResults"  # 指定文件目录
+        dir = r"D:\IdeaProjects\seeyon\PyUnittest\TestResults"  # 指定文件目录
         mail_body = self.find_new_file(dir)  # 查找最新的html文件
 
         #邮件内容
@@ -53,7 +53,7 @@ class SendEmails:
     def email_appendix(self):
         mg = MIMEMultipart()
         # 构造附件，传送当前目录下的 test.txt 文件
-        appendix = MIMEText(open(r"D:\IdeaProjects\seeyon\Interface\TestResults\test_result.html", 'rb').read(), 'base64', 'utf-8')
+        appendix = MIMEText(open(r"D:\IdeaProjects\seeyon\PyUnittest\TestResults\test_result.html", 'rb').read(), 'base64', 'utf-8')
         appendix["Content-Type"] = 'application/octet-stream'
         appendix["Content-Disposition"] = 'attachment; filename="test_result.html"'
         mg.attach(appendix)

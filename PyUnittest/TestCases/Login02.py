@@ -2,7 +2,7 @@
 #定义判断真假的断言
 import unittest
 import sys
-sys.path.append(r"D:\IdeaProjects\seeyon\Interface\Interfaces\Logins") #跨目录调用需要配置路径,接口路径
+sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\Interfaces\Logins") #跨目录调用需要配置路径,接口路径
 import Login1
 
 # def run_login(username,password,expected_value):

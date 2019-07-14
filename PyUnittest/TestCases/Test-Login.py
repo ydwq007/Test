@@ -2,9 +2,9 @@
 #登录接口
 #y由于PC端是PHP渲染，通过表单提交，但是无法做登录接口测试，故采取移动端的登录接口
 import requests,json,re,logging,csv,sys
-sys.path.append(r'D:\IdeaProjects\seeyon\Interface\TestDatas') #跨目录调用需要配置路径，测试数据路径
+sys.path.append(r'D:\IdeaProjects\seeyon\PyUnittest\TestDatas') #跨目录调用需要配置路径，测试数据路径
 from BasicDatas import mobile,parameter_login,test_chome,headers
-sys.path.append(r'D:\IdeaProjects\seeyon\Interface\Interfaces\Logins') #跨目录调用需要配置路径,接口路径
+sys.path.append(r'D:\IdeaProjects\seeyon\PyUnittest\Interfaces\Logins') #跨目录调用需要配置路径,接口路径
 import Login1
 # # logging.basicConfig(level=logging.DEBUG)
 

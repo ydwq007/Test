@@ -18,7 +18,7 @@ def email_appendix(title, from_name, from_address, to_address,serverport, server
     mg["From"] = Header(from_name,"utf-8") #发件地址
 
     # 构造附件，传送当前目录下的 test.txt 文件
-    appendix = MIMEText(open(r"D:\IdeaProjects\seeyon\Interface\TestResults\test_result.html", 'rb').read(), 'base64', 'utf-8')
+    appendix = MIMEText(open(r"D:\IdeaProjects\seeyon\PyUnittest\TestResults\test_result.html", 'rb').read(), 'base64', 'utf-8')
     appendix["Content-Type"] = 'application/octet-stream'
     appendix["Content-Disposition"] = 'attachment; filename="test_result.html"'
     mg.attach(appendix)
@@ -102,11 +102,11 @@ def sendemail():
     title = "Python接口自动化测试报告"
 
     #发送固定文件
-    with open(r"D:\IdeaProjects\seeyon\Interface\TestResults\test_result.html", "rb") as file:#读取二进制
+    with open(r"D:\IdeaProjects\seeyon\PyUnittest\TestResults\test_result.html", "rb") as file:#读取二进制
         mail_body = file.read()
 
     # #发送最新文件
-    # dir = r"D:\IdeaProjects\seeyon\Interface\TestResults"  # 指定文件目录
+    # dir = r"D:\IdeaProjects\seeyon\PyUnittest\TestResults"  # 指定文件目录
     # mail_body = find_new_file(dir)  # 查找最新的html文件
 
 
