@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
-#发送邮件
+"""
+接口：发送测试报告
+创建人：魏奇
+更新人：魏奇
+更新时间：2019-07-11
+"""
 
 import smtplib
 import os.path as pth

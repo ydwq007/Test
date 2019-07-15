@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
-#注册接口，仅支持手机号注册A类账号
+"""
+接口：封装注册接口 - 移动端
+创建人：魏奇
+更新人：魏奇
+更新时间：2019-07-10
+说明：由于PC端是PHP渲染，通过表单提交，仅支持手机号注册A类账号
+"""
 
 import requests,json,re,logging,csv
 from bson import json_util

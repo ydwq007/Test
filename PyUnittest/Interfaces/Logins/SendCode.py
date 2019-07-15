@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
-#发送手机或者邮箱验证码接口
+"""
+接口：封装发送手机或者邮箱验证码接口 - 移动端
+创建人：魏奇
+更新人：魏奇
+更新时间：2019-07-09
+说明：由于PC端是PHP渲染，通过表单提交，仅支持手机号注册A类账号
+"""
 
 import requests,json,re,logging,csv,sys
 from bson import json_util

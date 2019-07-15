@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
-#专区搜索接口
-#y由于PC端是PHP渲染，通过表单提交，但是无法做登录接口测试，故采取移动端的登录接口
+"""
+接口：封装专区搜索接口 - 移动端
+创建人：魏奇
+更新人：魏奇
+更新时间：2019-07-08
+说明：
+"""
+
 import requests,json,re,logging,csv
 from bson import json_util
 # logging.basicConfig(level=logging.DEBUG)

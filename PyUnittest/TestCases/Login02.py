@@ -1,9 +1,15 @@
 # -*- coding: utf-8 -*-
-#定义判断真假的断言
+"""
+接口：移动端登录接口- unittest
+创建人：魏奇
+更新人：魏奇
+更新时间：2019-07-10
+"""
+
 import unittest
 import sys
 sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\Interfaces\Logins") #跨目录调用需要配置路径,接口路径
-import Login1
+import Login
 
 # def run_login(username,password,expected_value):
 #     try:
@@ -22,12 +28,12 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
 
     @classmethod
     def setUpClass(cls):
-        #所有case执行之前的前置
+        #所有case执行之前的前置，测试用例需要登录web，可以先实例化浏览器
         print("\n","脚本执行开始")
 
     @classmethod
     def tearDownClass(cls):
-        #所有case执行之后的前置
+        #所有case执行之后的后置，如关闭数据库连接。关闭浏览器。
         print("脚本执行结束","\n")
 
     def setUp(self):
@@ -47,7 +53,7 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
         expected_value = True
         #调用接口
         try:
-            result = Login1.re_login(username,password,"") #获取接口成功会失败的标记
+            result = Login.re_login(username,password,"") #获取接口成功会失败的标记
             self.assertEqual(expected_value, result)
         except AssertionError:
             print("断言失败，失败原因：期望值%s  不等于实际值 %s" % (expected_value,result))
@@ -63,7 +69,7 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
         expected_value = False
         #调用接口
         try:
-            result = Login1.re_login(username,password,"") #获取接口成功会失败的标记
+            result = Login.re_login(username,password,"") #获取接口成功会失败的标记
             self.assertEqual(expected_value, result)
         except AssertionError:
             print("断言失败，失败原因：期望值%s  不等于实际值 %s" % (expected_value,result))
@@ -79,7 +85,7 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
         expected_value = False
         #调用接口
         try:
-            result = Login1.re_login(username,password,"") #获取接口成功会失败的标记
+            result = Login.re_login(username,password,"") #获取接口成功会失败的标记
             self.assertEqual(expected_value, result)
         except AssertionError:
             print("断言失败，失败原因：期望值%s  不等于实际值 %s" % (expected_value,result))
@@ -95,7 +101,7 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
         expected_value = False
         #调用接口
         try:
-            result = Login1.re_login(username,password,"") #获取接口成功会失败的标记
+            result = Login.re_login(username,password,"") #获取接口成功会失败的标记
             self.assertEqual(expected_value, result)
         except AssertionError:
             print("断言失败，失败原因：期望值%s  不等于实际值 %s" % (expected_value,result))
@@ -111,7 +117,7 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
         expected_value = False
         #调用接口
         try:
-            result = Login1.re_login(username,password,"") #获取接口成功会失败的标记
+            result = Login.re_login(username,password,"") #获取接口成功会失败的标记
             self.assertEqual(expected_value, result)
         except AssertionError:
             print("断言失败，失败原因：期望值%s  不等于实际值 %s" % (expected_value,result))

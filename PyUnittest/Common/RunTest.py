@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
-#执行测试案例
+"""
+接口：执行测试案例
+创建人：魏奇
+更新人：魏奇
+更新时间：2019-07-11
+"""
 import unittest
 import os
 import time
@@ -42,7 +47,7 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
 
         with open(r"D:\IdeaProjects\seeyon\PyUnittest\TestResults\test_result.html", "wb") as result_html: #测试报告路径
             runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=result_name,description="案例具体测试情况，请参加附件",
-                                                    verbosity=2)
+                                                    verbosity=2,retry=2,save_last_try=False)
             runner_results.run(suite) #执行案例
 
 

@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
-#定义判断真假的断言
+"""
+接口：移动端登录接口-一般方法
+创建人：魏奇
+更新人：魏奇
+更新时间：2019-07-11
+"""
 import unittest
 import requests,json,re,logging,csv,sys
 sys.path.append(r'D:\IdeaProjects\seeyon\PyUnittest\TestDatas') #跨目录调用需要配置路径，测试数据路径

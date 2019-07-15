@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
-#登录前获取token接口
+"""
+接口：封装登录前获取token接口 -PC端
+创建人：魏奇
+更新人：魏奇
+更新时间：2019-07-10
+说明：由于PC端是PHP渲染，通过表单提交，但是无法做登录接口测试，故采取移动端的登录接口
+"""
+
 import requests,re,json,logging
 # logging.basicConfig(level=logging.DEBUG)
 
