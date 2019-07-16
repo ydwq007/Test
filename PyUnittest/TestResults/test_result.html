@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Login02_接口测试报告_2019-07-15 14:29:22</title>
+    <title>login_接口测试报告_2019-07-16 10:50:53</title>
     <meta name="generator" content="HTMLTestRunner 0.8.3"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
@@ -70,7 +70,7 @@ a.popup_link:hover {
     margin-right: 9px;
     margin-top: 4px;
     display: block;
-    float: right;
+    float: left;
     background-color: white;
 }
 .close_shots {
@@ -389,10 +389,10 @@ function hide_img(obj){
 }
 </script>
 <div class='heading'>
-<h1>Login02_接口测试报告_2019-07-15 14:29:22</h1>
-<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>开始时间:</strong> 2019-07-15 14:29:22</p>
-<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>执行耗时:</strong> 0:00:01.978264</p>
-<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>测试状态:</strong> <span class="tj passCase">Pass</span>:5 <span class="tj">通过率</span>:100.0%</p>
+<h1>login_接口测试报告_2019-07-16 10:50:53</h1>
+<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>开始时间:</strong> 2019-07-16 10:51:28</p>
+<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>执行耗时:</strong> 0:00:03.555</p>
+<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>测试状态:</strong> <span class="tj passCase">Pass</span>:6 <span class="tj">通过率</span>:100.0%</p>
 
 <p class='description' style="color:red;font-family:Microsoft Yahei;font-size:30px">案例具体测试情况，请参加附件</p>
 </div>
@@ -405,11 +405,11 @@ function hide_img(obj){
 
 <div id='show_detail_line' style=" float: left;  width: 100%;">
 <a class="abstract detail_button" href='javascript:showCase(0,1)'>概要[100.00%]</a>
-<a class="passed  detail_button" href='javascript:showCase(1,1)'>通过[5]</a>
+<a class="passed  detail_button" href='javascript:showCase(1,1)'>通过[6]</a>
 <a class="failed  detail_button" href='javascript:showCase(2,1)'>失败[0]</a>
 <a class="errored  detail_button" href='javascript:showCase(3,1)'>错误[0]</a>
 <a class="skiped  detail_button"  href='javascript:showCase(4,1)'>跳过[0]</a>
-<a class="all detail_button" href='javascript:showCase(5,1)'>所有[5]</a>
+<a class="all detail_button" href='javascript:showCase(5,1)'>所有[6]</a>
 </div>
 <table id='result_table'>
 <colgroup>
@@ -458,10 +458,8 @@ function hide_img(obj){
 pt1.1.1: 
  案例开始执行
 test_case01
-D:\Python\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning)
 ---------打印响应结果：---------------
-username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU2MzE3MjE2Miwic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1NjMxNzkzNjIsInVpZCI6IjE1NjI2NTAzNzUwMTkwMDAwIn0.OC917TL4GRvfBoPeMUaxI7KMwTwMC9pKrBCznaOAFOw
+username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU2MzI0NTQ4OCwic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1NjMyNTI2ODgsInVpZCI6IjE1NjI2NTAzNzUwMTkwMDAwIn0.zTSblKhfVdNnoJ-3uM3I1d3JyHdIADzaQa6sXdnoNT8
 已调用接口
 案例完成执行 
 
@@ -598,10 +596,74 @@ username为gold0011的用户登录失败！！！原因为：用户名或密码�
     <td>无截图</td>
 </tr>
 
+<tr class='passClass'>
+    <td>Login01.Login_cases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1.2',1)">查看</a></td>
+    <td>&nbsp;</td>
+</tr>
+
+<tr id='pt1.2.1' class='hiddenRow'>
+    <td ><div class='testcase'>test_results</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <span class='status passCase'>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2.1')" >
+        通过</a></span>
+    <div id='div_pt1.2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2.1: 
+第1次执行案例，案例内容：用户名密码均正确的情况
+D:\Python\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+---------打印响应结果：---------------
+username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU2MzI0NTQ4Nywic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1NjMyNTI2ODcsInVpZCI6IjE1NjI2NTAzNzUwMTkwMDAwIn0.WEOMo1DrEHW-uXmvh5KkO7y50vLN4jZmHgNxmbZznMo
+已调用接口
+
+第2次执行案例，案例内容：密码错误的情况
+---------打印响应结果：---------------
+username为gold001的用户登录失败！！！原因为：用户名或密码错误
+第2条案例断言失败，失败原因：期望值True  不等于实际值 False
+已调用接口
+
+第3次执行案例，案例内容：密码为空的情况
+---------打印响应结果：---------------
+username为gold001的用户登录失败！！！原因为：参数错误
+已调用接口
+
+第4次执行案例，案例内容：用户名为空的情况
+---------打印响应结果：---------------
+username为空的用户登录失败！！！原因为：参数错误
+已调用接口
+
+第5次执行案例，案例内容：用户名错误的情况
+---------打印响应结果：---------------
+username为gold101的用户登录失败！！！原因为：用户名或密码错误
+已调用接口
+----------案例执行结果如下：-------------
+总共执行5条案例，执行通过4案例，执行失败1案例，案例通过率：80.00%
+总共执行5条案例，执行通过4案例，执行失败1案例，案例通过率：80.00%
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td>无截图</td>
+</tr>
+
 <tr id='total_row'>
     <th>统计</th>
-    <th>5</th>
-    <th>5</th>
+    <th>6</th>
+    <th>6</th>
     <th>0</th>
     <th>0</th>
     <th>&nbsp;</th>
@@ -610,7 +672,7 @@ username为gold0011的用户登录失败！！！原因为：用户名或密码�
 </table>
 <script>
     showCase(0,1);
-    drawCircle('circle1',5, 0, 0);
+    drawCircle('circle1',6, 0, 0);
 </script>
 
 <div id='ending'>&nbsp;</div>

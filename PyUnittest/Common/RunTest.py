@@ -19,7 +19,7 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
         #执行路径
         casespath = r"D:\IdeaProjects\seeyon\PyUnittest\TestCases" #执行前需检验路径和文件
         #执行文件
-        casesname = "Login02"
+        casesname = "login"
         #执行时间
         run_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         #报告名称

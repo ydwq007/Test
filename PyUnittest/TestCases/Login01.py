@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-接口：移动端登录接口-一般方法
+接口：移动端登录接口 - 一般写法
 创建人：魏奇
 更新人：魏奇
 更新时间：2019-07-11
@@ -10,7 +10,7 @@ import requests,json,re,logging,csv,sys
 sys.path.append(r'D:\IdeaProjects\seeyon\PyUnittest\TestDatas') #跨目录调用需要配置路径，测试数据路径
 from BasicDatas import mobile,parameter_login,test_chome,headers
 sys.path.append(r'D:\IdeaProjects\seeyon\PyUnittest\Interfaces\Logins') #跨目录调用需要配置路径,接口路径
-import Login1
+import Login
 
 
 class Login_cases(unittest.TestCase): # 继承unittest.TestCase
@@ -26,7 +26,7 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
             n += 1
             #异常处理try
             try:
-                result = Login1.re_login(username,password,"") #获取接口成功会失败的标记
+                result = Login.re_login(username,password,"") #获取接口成功会失败的标记
                 #统计案例执行情况
                 #如果用断言判断执行情况，需要添加断言失败的异常，并且将失败的断言进行统计
                 if self.assertEqual(i[3], result) == None:
