@@ -11,8 +11,9 @@ import sys
 sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\Interfaces\Logins") #跨目录调用需要配置路径,接口路径
 import Login
 sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\Common") #跨目录调用需要配置路径,接口路径
-import DataBases
-
+import DataBases,file
+sys.path.append(r'D:\IdeaProjects\seeyon\PyUnittest\TestDatas') #跨目录调用需要配置路径
+from config import test_usercenter_db
 
 class Login_cases():
     #初始化数据
@@ -34,20 +35,23 @@ class Login_cases():
 
 
 if __name__ == '__main__':
-    #通过数据库获取登录数据
-    host = "172.31.10.8" #数据库地址
-    username = "usercenter" #用户名
-    password = "6dfa6P3d27fe42f96f8T1268!" #密码
-    dbname = "usercenter" #库名
-    db = DataBases.Mysql_links(host,username,password,dbname)
+    #连接数据库，返回用户名数据
+    db = DataBases.Mysql_links(test_usercenter_db["host"],test_usercenter_db["username"],test_usercenter_db["password"],
+                               dbname = test_usercenter_db["dbname"])
+    sql = "select username from uc_members where uid = %s" % ('-4322418878739234710')
     db.mysqldb()
-    username = db.querydata("select username from uc_members where uid = %s" % ('-4322418878739234710'))
+    username = db.querydata(sql)
 
-    # print(type(username[0][0]))
-    # print(username[0][0])
-
-    re = Login_cases(username[0][0],1234561,True)
+    re = Login_cases(username[0][0],123456,True)
     re.test_case01()
+
+    path1 = r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas\文本数据.txt"
+    path2 = r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas\客户数据表.csv"
+    re1 = file.FlieRead(path1)
+    re2 = file.FlieRead(path2)
+    # context = re1.txt(3)
+    context = re2.csv(line=2,read=3)
+    print(context)
 
 
 
