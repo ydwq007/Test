@@ -9,13 +9,13 @@
 from selenium import webdriver
 import time
 from selenium.webdriver.common.by import By #支持定位的分类
-import logging
-logging.basicConfig(level=logging.DEBUG)
+# import logging
+# logging.basicConfig(level=logging.DEBUG)
 from selenium.webdriver.support import expected_conditions as ec #导入显示预期条件判断方法，并且重名为ec
 from selenium.common.exceptions import NoSuchElementException #导入隐式等待
 
-browser = webdriver.Firefox()
-browser.get("https://testcloud.seeyon.com")
+browser = webdriver.Firefox(log_path=r"D:\IdeaProjects\seeyon\PyUnittest\TestResults\geckodriver.log")
+browser.get("https://testchome.seeyon.com")
 
 time.sleep(1) #等待1s
 
@@ -32,7 +32,8 @@ print(now_url)
 # browser.find_element_by_class_name("icon-search").click() #点击搜索
 
 #进行登录
-browser.find_element_by_xpath('//*[@id="app"]/div[1]/div/div[1]/div[2]/span[2]/a[1]').click()#点击登录按键
+# browser.find_element_by_xpath("/html/body/div/div[1]/div/div[1]/div[2]/span[2]/a[1]").click()#点击登录按键
+browser.find_elements_by_css_selector("登录").click()
 browser.find_element_by_xpath("/html/body/div[1]/div[1]/div[1]/div[1]").click() #点击用户登录
 browser.find_element_by_id("login_common_li").click() #选择账号密码登录
 browser.find_element_by_id("login_username").send_keys("gold001") #输入用户名

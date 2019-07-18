@@ -76,7 +76,7 @@ def find_new_file(dir): #参数为文件夹路径
     return file
 
 #发送邮件
-def sendemail(send_content,file):
+def sendemail(send_content=2,file=2):
     #邮件接收地址
     adresses = ["weiqi@seeyon.com","775636762@qq.com"]
 
@@ -113,19 +113,4 @@ def sendemail(send_content,file):
                        config["username"], config["password"])
 
 if __name__ == "__main__":
-    # #邮件接收地址
-    # adresses = ["weiqi@seeyon.com"]
-    #
-    # #服务器参数
-    # config = {
-    #     "from": "775636762@qq.com", #服务器邮箱地址
-    #     "from_name": "Python接口自动化测试框架:", #邮件主题
-    #     "to": adresses[0], #邮件接收地址
-    #     "serverip": "smtp.qq.com", #邮件服务器
-    #     "serverport": "465", #邮件服务器端口
-    #     "username": "775636762@qq.com", #服务器邮箱用户名
-    #     "password": "txhattvlgxzxbfdc"  # 服务器邮箱密码，使用QQ邮箱的SMTP授权码
-    # }
-    # #邮件标题
-    # title = "Python接口自动化测试报告"
-    sendemail(2,2)
+    sendemail() #第一个参数（1表示字符串邮件，2表示发送附件邮件，默认2），第二个参数（#1表示固定文件，2表示最新文件，默认2）

@@ -6,11 +6,13 @@
 更新时间：2019-07-11
 """
 import unittest
-import os
+import os,xmlrunner
 import time
 import HTMLTestRunner_Chart as HTMLTestRunner
-# import HTMLTestRunnerCN as HTMLTestRunner
-import SendEmail
+import sys
+sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\Common") #跨目录调用需要配置路径
+from SendEmail import sendemail
+
 
 class RunCase(unittest.TestCase):# 继承unittest.TestCase
 
@@ -40,21 +42,25 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
         #     runner_tests = unittest.TextTestRunner(stream=result_txt,descriptions=result_txt1,verbosity=2) # verbosity执行结果的详细程度，0<1<2，默认1
         #     runner_tests.run(suite)
 
-        #执行并且输出测试报告html格式
+        # #执行并且输出测试报告html格式
         # with open(r"D:\IdeaProjects\seeyon\PyUnittest\TestResults\test_result.html", "wb") as result_html: #测试报告路径
-        #     runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=result_name,description="案例具体测试情况，请参加附件",
-        #                                                    tester=tester,verbosity=2)
-
+        #     runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=result_name,description="案例具体测试情况，请阅读附件，谢谢",
+        #                                                    verbosity=2)
+        #     runner_results.run(suite) #执行案例
         with open(r"D:\IdeaProjects\seeyon\PyUnittest\TestResults\test_result.html", "wb") as result_html: #测试报告路径
-            runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=result_name,description="案例具体测试情况，请参加附件",
+            runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=result_name,description="案例具体测试情况，请阅读附件",
                                                     verbosity=2,retry=2,save_last_try=False)
             runner_results.run(suite) #执行案例
+
+        # #执行并且输出测试报告xml格式
+        # runner_results = xmlrunner.XMLTestRunner(output=r'D:\IdeaProjects\seeyon\PyUnittest\TestResults')#指定报告放的目录
+        # runner_results.run(suite) #执行案例
 
 
 
         #发送测试报告
         time.sleep(5)
-        SendEmail.sendemail(2,2)
+        sendemail()
 
 if __name__=="__main__":
     unittest.main()#执行所有案例

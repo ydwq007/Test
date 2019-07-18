@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>login_接口测试报告_2019-07-17 10:02:37</title>
+    <title>login0_接口测试报告_2019-07-18 15:44:16</title>
     <meta name="generator" content="HTMLTestRunner 0.8.3"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
@@ -16,11 +16,11 @@ pre  {
 /* -- heading ---------------------------------------------------------------------- */
 h1 {
 	font-size: 16pt;
-	color: gray;
+	color: black;
 }
 .heading {
     float:left;
-    width:30%;
+    width:50%;
     margin-top: 0ex;
     margin-bottom: 1ex;
 }
@@ -29,8 +29,8 @@ h1 {
     margin-bottom: 0;
 }
 .heading .description {
-    margin-top: 4ex;
-    margin-bottom: 6ex;
+    margin-top: 2ex;
+    margin-bottom: 1ex;
 }
 /* -- css div popup ------------------------------------------------------------------------ */
 a.popup_link {
@@ -155,11 +155,11 @@ a.popup_link:hover {
     }
 #total_row  { font-weight: bold; }
 .passClass  { background-color: #6c6;  !important ;}
-.failClass  { background-color: #c60;  !important ;}
-.errorClass { background-color: #c00; !important ; }
+.failClass  { background-color: #FF0000;  !important ;}
+.errorClass { background-color: #FFD700; !important ; }
 .passCase   { color: #6c6; }
-.failCase   { color: #c60; font-weight: bold; }
-.errorCase  { color: #c00; font-weight: bold; }
+.failCase   { color: #FF0000; font-weight: bold; }
+.errorCase  { color: #FFD700; font-weight: bold; }
 .skipCase  { color:#908e8e; font-weight: bold; }
 tr[id^=pt]  td { background-color: rgba(73,204,144,.3) !important ; }
 tr[id^=ft]  td { background-color: rgba(252,161,48,.3) !important; }
@@ -184,8 +184,8 @@ tr[id^=st]  td { background-color: #6f6f6fa1 !important ; }
 }
 .detail_button.abstract{background-color: #4dbee8;}
 .detail_button.passed{  background-color: #66cc66;}
-.detail_button.failed{  background-color: #cc6600;}
-.detail_button.errored{ background-color: #f54f4f;}
+.detail_button.failed{  background-color: #FF0000;}
+.detail_button.errored{ background-color: #FFD700;}
 .detail_button.skiped{ background-color: gray;}
 .detail_button.all{ background-color: blue;}
 .piechart{  
@@ -309,9 +309,9 @@ function html_escape(s) {
     return s;
 }
 function drawCircle(circle,pass, fail, error){ 
-    var color = ["#6c6","#c60","#c00"];  
+    var color = ["#6c6","#FF0000","#FFD700"];  
     var data = [pass,fail,error]; 
-    var text_arr = ["Pass", "Fail", "Error"];
+    var text_arr = ["通过", "失败", "错误"];
     var canvas = document.getElementById(circle);  
     var ctx = canvas.getContext("2d");  
     var startPoint=0;
@@ -389,12 +389,12 @@ function hide_img(obj){
 }
 </script>
 <div class='heading'>
-<h1>login_接口测试报告_2019-07-17 10:02:37</h1>
-<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>开始时间:</strong> 2019-07-17 10:03:16</p>
-<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>执行耗时:</strong> 0:00:04.499</p>
-<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>测试状态:</strong> <span class="tj passCase">Pass</span>:6 <span class="tj errorCase">Error</span>:3 <span class="tj">通过率</span>:66.7%</p>
+<h1>login0_接口测试报告_2019-07-18 15:44:16</h1>
+<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>开始时间:</strong> 2019-07-18 15:44:17</p>
+<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>执行耗时:</strong> 0:00:03.807</p>
+<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>测试状态:</strong> <span class="tj passCase">Pass</span>:6 <span class="tj failCase">Failure</span>:1 <span class="tj">通过率</span>:85.7%</p>
 
-<p class='description' style="color:red;font-family:Microsoft Yahei;font-size:30px">案例具体测试情况，请参加附件</p>
+<p class='description' style="color:red;font-family:Microsoft Yahei;font-size:30px">案例具体测试情况，请阅读附件</p>
 </div>
 
 <div class="piechart" >
@@ -404,12 +404,12 @@ function hide_img(obj){
 </div>
 
 <div id='show_detail_line' style=" float: left;  width: 100%;">
-<a class="abstract detail_button" href='javascript:showCase(0,1)'>概要[66.67%]</a>
+<a class="abstract detail_button" href='javascript:showCase(0,1)'>概要[85.71%]</a>
 <a class="passed  detail_button" href='javascript:showCase(1,1)'>通过[6]</a>
-<a class="failed  detail_button" href='javascript:showCase(2,1)'>失败[0]</a>
-<a class="errored  detail_button" href='javascript:showCase(3,1)'>错误[3]</a>
+<a class="failed  detail_button" href='javascript:showCase(2,1)'>失败[1]</a>
+<a class="errored  detail_button" href='javascript:showCase(3,1)'>错误[0]</a>
 <a class="skiped  detail_button"  href='javascript:showCase(4,1)'>跳过[0]</a>
-<a class="all detail_button" href='javascript:showCase(5,1)'>所有[9]</a>
+<a class="all detail_button" href='javascript:showCase(5,1)'>所有[7]</a>
 </div>
 <table id='result_table'>
 <colgroup>
@@ -431,38 +431,42 @@ function hide_img(obj){
     <th>错误截图</th>
 </tr>
 
-<tr class='passClass'>
+<tr class='failClass'>
     <td>Login02.Login_cases</td>
+    <td>6</td>
     <td>5</td>
-    <td>5</td>
+    <td>1</td>
     <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c1.1',5)">查看</a></td>
+    <td><a href="javascript:showClassDetail('c1.1',6)">查看</a></td>
     <td>&nbsp;</td>
 </tr>
 
-<tr id='pt1.1.1' class='hiddenRow'>
-    <td ><div class='testcase'>test_case01: 用户名密码均正确的情况</div></td>
+<tr id='ft1.1.1' class='none'>
+    <td ><div class='testcase'>test_case01: "用户名密码均正确的情况</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
-    <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.1')" >
-        通过</a></span>
-    <div id='div_pt1.1.1' class="popup_window">
+    <span class='status failCase'>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1.1')" >
+        失败</a></span>
+    <div id='div_ft1.1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1.1: 
+ft1.1.1: 
  案例开始执行
 test_case01
 ---------打印响应结果：---------------
-username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU2MzMyODk5OSwic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1NjMzMzYxOTksInVpZCI6IjE1NjI2NTAzNzUwMTkwMDAwIn0.NTrLegdV4kD_nERhziQFfJ0wUEghd1PwKOOP3AJQ37g
+username为gold001的用户登录失败！！！原因为：用户名或密码错误
 已调用接口
 案例完成执行 
 
+Traceback (most recent call last):
+  File "D:\IdeaProjects\seeyon\PyUnittest\TestCases\Login02.py", line 84, in test_case01
+    self.assertEqual(expected_value, result)
+AssertionError: True != False
 
 
         </pre>
@@ -473,7 +477,7 @@ username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhb
 </tr>
 
 <tr id='pt1.1.2' class='hiddenRow'>
-    <td ><div class='testcase'>test_case02: 密码错误的情况</div></td>
+    <td ><div class='testcase'>test_case01_1: 用户名密码均正确的情况，数据库获取</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <span class='status passCase'>
@@ -487,6 +491,39 @@ username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhb
         <pre>
         
 pt1.1.2: 
+ 案例开始执行
+test_case01_1
+查询成功共1条数据
+(('gold001',),)
+---------打印响应结果：---------------
+username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU2MzQzNTg1OSwic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1NjM0NDMwNTksInVpZCI6IjE1NjI2NTAzNzUwMTkwMDAwIn0.aFTqPLLOoSpVhfitYV4HVLg-gE2CEle-L2jpOeMjAU0
+已调用接口
+案例完成执行 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.3' class='hiddenRow'>
+    <td ><div class='testcase'>test_case02: 密码错误的情况</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <span class='status passCase'>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.3')" >
+        通过</a></span>
+    <div id='div_pt1.1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1.3: 
  案例开始执行
 test_case02
 ---------打印响应结果：---------------
@@ -503,21 +540,21 @@ username为gold001的用户登录失败！！！原因为：用户名或密码�
     <td>无截图</td>
 </tr>
 
-<tr id='pt1.1.3' class='hiddenRow'>
+<tr id='pt1.1.4' class='hiddenRow'>
     <td ><div class='testcase'>test_case03: 密码为空的情况</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.3')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.4')" >
         通过</a></span>
-    <div id='div_pt1.1.3' class="popup_window">
+    <div id='div_pt1.1.4' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.3').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.4').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1.3: 
+pt1.1.4: 
  案例开始执行
 test_case03
 ---------打印响应结果：---------------
@@ -534,21 +571,21 @@ username为gold001的用户登录失败！！！原因为：参数错误
     <td>无截图</td>
 </tr>
 
-<tr id='pt1.1.4' class='hiddenRow'>
+<tr id='pt1.1.5' class='hiddenRow'>
     <td ><div class='testcase'>test_case04: 用户名为空的情况</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.4')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.5')" >
         通过</a></span>
-    <div id='div_pt1.1.4' class="popup_window">
+    <div id='div_pt1.1.5' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.4').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.5').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1.4: 
+pt1.1.5: 
  案例开始执行
 test_case04
 ---------打印响应结果：---------------
@@ -565,21 +602,21 @@ username为空的用户登录失败！！！原因为：参数错误
     <td>无截图</td>
 </tr>
 
-<tr id='pt1.1.5' class='hiddenRow'>
+<tr id='pt1.1.6' class='hiddenRow'>
     <td ><div class='testcase'>test_case05: 用户名错误的情况</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.5')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.6')" >
         通过</a></span>
-    <div id='div_pt1.1.5' class="popup_window">
+    <div id='div_pt1.1.6' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.5').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.6').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1.5: 
+pt1.1.6: 
  案例开始执行
 test_case05
 ---------打印响应结果：---------------
@@ -625,7 +662,7 @@ pt1.2.1:
 D:\Python\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning)
 ---------打印响应结果：---------------
-username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU2MzMyODk5Nywic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1NjMzMzYxOTcsInVpZCI6IjE1NjI2NTAzNzUwMTkwMDAwIn0.fcWVK_fdnFR75lnMlzvi4cHKRnj-lSfoWL6INkzz_yk
+username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU2MzQzNTg1Niwic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1NjM0NDMwNTYsInVpZCI6IjE1NjI2NTAzNzUwMTkwMDAwIn0.X96Hl4owppaUAj9hx8NU13rxJVx__211KgNeL_vA0oQ
 已调用接口
 
 第2次执行案例，案例内容：密码错误的情况
@@ -660,155 +697,19 @@ username为gold101的用户登录失败！！！原因为：用户名或密码�
     <td>无截图</td>
 </tr>
 
-<tr class='errorClass'>
-    <td>unittest.loader._FailedTest</td>
-    <td>3</td>
-    <td>0</td>
-    <td>0</td>
-    <td>3</td>
-    <td><a href="javascript:showClassDetail('c1.3',3)">查看</a></td>
-    <td>&nbsp;</td>
-</tr>
-
-<tr id='et1.3.1' class='none'>
-    <td ><div class='testcase'>login</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <span class='status errorCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_et1.3.1')" >
-        错误</a></span>
-    <div id='div_et1.3.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_et1.3.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-et1.3.1: ImportError: Failed to import test module: login
-Traceback (most recent call last):
-  File "D:\Python\lib\unittest\loader.py", line 434, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "D:\Python\lib\unittest\loader.py", line 375, in _get_module_from_name
-    __import__(name)
-  File "D:\IdeaProjects\seeyon\PyUnittest\TestCases\login.py", line 35, in &lt;module&gt;
-    browser.find_element_by_xpath('//*[@id="app"]/div[1]/div/div[1]/div[2]/span[2]/a[1]').click()#点击登录按键
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //*[@id="app"]/div[1]/div/div[1]/div[2]/span[2]/a[1]
-
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='et1.3.2' class='none'>
-    <td ><div class='testcase'>login: _retry:1</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <span class='status errorCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_et1.3.2')" >
-        错误</a></span>
-    <div id='div_et1.3.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_et1.3.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-et1.3.2: ImportError: Failed to import test module: login
-Traceback (most recent call last):
-  File "D:\Python\lib\unittest\loader.py", line 434, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "D:\Python\lib\unittest\loader.py", line 375, in _get_module_from_name
-    __import__(name)
-  File "D:\IdeaProjects\seeyon\PyUnittest\TestCases\login.py", line 35, in &lt;module&gt;
-    browser.find_element_by_xpath('//*[@id="app"]/div[1]/div/div[1]/div[2]/span[2]/a[1]').click()#点击登录按键
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //*[@id="app"]/div[1]/div/div[1]/div[2]/span[2]/a[1]
-
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='et1.3.3' class='none'>
-    <td ><div class='testcase'>login: _retry:2</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <span class='status errorCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_et1.3.3')" >
-        错误</a></span>
-    <div id='div_et1.3.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_et1.3.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-et1.3.3: ImportError: Failed to import test module: login
-Traceback (most recent call last):
-  File "D:\Python\lib\unittest\loader.py", line 434, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "D:\Python\lib\unittest\loader.py", line 375, in _get_module_from_name
-    __import__(name)
-  File "D:\IdeaProjects\seeyon\PyUnittest\TestCases\login.py", line 35, in &lt;module&gt;
-    browser.find_element_by_xpath('//*[@id="app"]/div[1]/div/div[1]/div[2]/span[2]/a[1]').click()#点击登录按键
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //*[@id="app"]/div[1]/div/div[1]/div[2]/span[2]/a[1]
-
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-    <td>无截图</td>
-</tr>
-
 <tr id='total_row'>
     <th>统计</th>
-    <th>9</th>
+    <th>7</th>
     <th>6</th>
+    <th>1</th>
     <th>0</th>
-    <th>3</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
 </tr>
 </table>
 <script>
     showCase(0,1);
-    drawCircle('circle1',6, 0, 3);
+    drawCircle('circle1',6, 1, 0);
 </script>
 
 <div id='ending'>&nbsp;</div>

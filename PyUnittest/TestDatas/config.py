@@ -8,7 +8,7 @@
 
 #数据库配置
 #测试
-test_mall_db = {
+test_cmall_db = {
     "host":"172.31.10.8",
     "port":3306,
     "username":"cmall",
@@ -36,12 +36,12 @@ test_usercenter_db = {
 
 #测试环境配置
 #类生产
-vprod_mall = "https://vprodcloud.seeyon.com"
+vprod_cmall = "https://vprodcloud.seeyon.com"
 vprod_chome = "https://vprodchome.seeyon.com"
 vprod_manager = "https://vprodcmanager.seeyon.com"
 
 #测试
-test_mall = "https://testcloud.seeyon.com"
+test_cmall = "https://testcloud.seeyon.com"
 test_chome = "https://testchome.seeyon.com"
 test_manager = "https://testcmanager.seeyon.com"
 
