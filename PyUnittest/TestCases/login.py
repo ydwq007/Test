@@ -86,5 +86,5 @@ except NoSuchElementException as msg:
 finally:
     print(time.ctime())
 
-time.sleep(3) #等待3s
+time.sleep(3) #等待3s1
 browser.quit() #退出浏览器
