@@ -98,7 +98,8 @@ def sendemail(send_content=2,file=2):
             mail_body = file.read()
     else:
         #发送最新文件
-        dir = r"..\TestResults"  # 指定文件目录
+        # dir = r"..\TestResults"  # 指定文件目录
+        dir = "../TestResults"  # 指定文件目录
         new_file = find_new_file(dir)  # 查找最新的html文件
         with open(r'%s'% new_file, "rb") as file:
             mail_body = file.read()
