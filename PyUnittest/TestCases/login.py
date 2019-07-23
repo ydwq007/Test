@@ -49,21 +49,21 @@ browser.find_element_by_id("login_submit").click() #点击登录按键
 #检查元素
 browser.set_page_load_timeout(10) #页面载入最长时间
 print("-----------检查元素（显示等待）---------")
-# for i in range(10):
-#     try:
-#         el1 = browser.find_element(By.CLASS_NAME,"icon-cart")
-#         #el = driver.find_element_by_id("useraddr")
-#         if el1.is_displayed():#如果元素展示
-#             print(el1)
-#             print("元素存在，pass")
-#             time.sleep(1)
-#             break
-#         else:
-#             print("元素不存在，fail")
-#     except Exception as err:
-#         print("出现异常，具体如下\n%s" % err)
-#     finally:
-#         print(time.ctime())
+for i in range(10):
+    try:
+        el1 = browser.find_element(By.CLASS_NAME,"icon-cart")
+        #el = driver.find_element_by_id("useraddr")
+        if el1.is_displayed():#如果元素展示
+            print(el1)
+            print("元素存在，pass")
+            time.sleep(1)
+            break
+        else:
+            print("元素不存在，fail")
+    except Exception as err:
+        print("出现异常，具体如下\n%s" % err)
+    finally:
+        print(time.ctime())
 try:
     WebDriverWait(browser, 5).until(
         ec.presence_of_element_located((By.CLASS_NAME,"icon-cart"))

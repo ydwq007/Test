@@ -10,7 +10,7 @@
 import requests,json,re,logging,csv,sys
 # import unittest
 # from unittest import TestCase
-sys.path.append(r'D:\IdeaProjects\seeyon\PyUnittest\TestDatas') #跨目录调用需要配置路径
+sys.path.append(r'\PyUnittest\TestDatas') #跨目录调用需要配置路径
 from bson import json_util
 import SendCode
 from BasicDatas import mobile,parameter_login,test_chome,headers

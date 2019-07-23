@@ -8,7 +8,7 @@
 import unittest,os,xmlrunner,time
 import HTMLTestRunner_Chart as HTMLTestRunner
 import sys
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\Common") #跨目录调用需要配置路径
+sys.path.append(r"\PyUnittest\Common") #跨目录调用需要配置路径
 from SendEmail import sendemail
 
 
