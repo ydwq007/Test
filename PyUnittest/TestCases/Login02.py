@@ -8,11 +8,11 @@
 
 import unittest
 import sys
-sys.path.append(r"\PyUnittest\Interfaces\Logins") #跨目录调用需要配置路径,接口路径
+sys.path.append(r"..\Interfaces\Logins") #跨目录调用需要配置路径,接口路径
 import Login
-sys.path.append(r"\PyUnittest\Common") #跨目录调用需要配置路径,接口路径
+sys.path.append(r"..\Common") #跨目录调用需要配置路径,接口路径
 import DataBases,file
-sys.path.append(r'\PyUnittest\TestDatas') #跨目录调用需要配置路径
+sys.path.append(r'..\TestDatas') #跨目录调用需要配置路径
 from config import test_usercenter_db
 
 

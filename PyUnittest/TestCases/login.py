@@ -18,7 +18,7 @@ from selenium.common.exceptions import TimeoutException
 
 #设置浏览器
 #火狐浏览器
-# browser = webdriver.Firefox(log_path=r"D:\IdeaProjects\seeyon\PyUnittest\TestResults\geckodriver.log")
+# browser = webdriver.Firefox(log_path=r"..\TestResults\geckodriver.log")
 #谷歌浏览器
 chrome = r"C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
 browser = webdriver.Chrome(executable_path=chrome)
