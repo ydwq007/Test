@@ -34,7 +34,7 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
         suite = unittest.TestSuite()#创建测试套件
         os.chdir(casespath) #需要执行的case所在路径
         case_path = os.getcwd() #获取路径
-        all_cases = unittest.defaultTestLoader.discover(case_path,pattern="%s*.py" % casesname) #指定案例脚本
+        all_cases = unittest.defaultTestLoader.discover(case_path,pattern="%s0*.py" % casesname) #指定案例脚本
         for case in all_cases:
              suite.addTests(case)#把所有的测试用例添加进来
 
