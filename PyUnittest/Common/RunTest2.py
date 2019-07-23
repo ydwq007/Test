@@ -22,7 +22,7 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
         # casespath = r"..\TestCases" #执行前需检验路径和文件
         casespath = "../TestCases" #执行前需检验路径和文件
         #执行文件
-        casesname = "login"
+        casesname = "Login"
         #执行时间
         run_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         #报告名称
