@@ -50,7 +50,7 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
         #     runner_results.run(suite) #执行案例
         with open(r"..\TestResults\test_result.html", "wb") as result_html: #测试报告路径
             runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=result_name,description="案例具体测试情况，请阅读附件",
-                                                    verbosity=2,retry=2,save_last_try=False)
+                                                    verbosity=2,save_last_try=False)#重试retry=2,
             runner_results.run(suite) #执行案例
 
         # #执行并且输出测试报告xml格式
