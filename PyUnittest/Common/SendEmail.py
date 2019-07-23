@@ -76,7 +76,7 @@ def find_new_file(dir): #参数为文件夹路径
     return file
 
 #发送邮件
-def sendemail(send_content=2,file=2):
+def sendemail(send_content=2,file=1):
     #邮件接收地址
     adresses = ["weiqi@seeyon.com","775636762@qq.com"]
 
@@ -98,8 +98,8 @@ def sendemail(send_content=2,file=2):
             mail_body = file.read()
     else:
         #发送最新文件
-        # dir = r"..\TestResults"  # 指定文件目录
-        dir = "../TestResults"  # 指定文件目录
+        dir = r"..\TestResults"  # 指定文件目录
+        # dir = "../TestResults"  # 指定文件目录
         new_file = find_new_file(dir)  # 查找最新的html文件
         with open(r'%s'% new_file, "rb") as file:
             mail_body = file.read()
