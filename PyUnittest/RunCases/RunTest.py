@@ -8,7 +8,7 @@
 import unittest,os,xmlrunner,time
 import HTMLTestRunner_Chart as HTMLTestRunner
 import sys
-sys.path.append(r"..\Common") #跨目录调用需要配置路径
+sys.path.append("../Common") #跨目录调用需要配置路径
 from SendEmail import sendemail
 
 
@@ -16,6 +16,7 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
 
     def test_case(self):
         #参数配置
+        # self.casespath = r"..\TestCases" #执行前需检验路径和文件
         self.casespath = "../TestCases" #执行前需检验路径和文件
         self.casesname = "login0" #执行文件
         self.style = 3 #发送邮件风格
