@@ -48,7 +48,8 @@ test_manager = "https://testcmanager.seeyon.com"
 
 #信息头
 headers = {
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+    "Connection":"close"
     #     # "Connection": "keep-alive"
     # "Accept-Encoding": "gzip, deflate, br",
     # "User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
