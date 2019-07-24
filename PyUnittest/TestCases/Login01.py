@@ -7,9 +7,9 @@
 """
 import unittest
 import requests,json,re,logging,csv,sys
-sys.path.append(r'..\TestDatas') #跨目录调用需要配置路径，测试数据路径
+sys.path.append('../TestDatas') #跨目录调用需要配置路径，测试数据路径
 from BasicDatas import mobile,parameter_login,test_chome,headers
-sys.path.append(r'..\Interfaces\Logins') #跨目录调用需要配置路径,接口路径
+sys.path.append('../Interfaces/Logins') #跨目录调用需要配置路径,接口路径
 import Login
 
 

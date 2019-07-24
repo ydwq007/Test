@@ -8,7 +8,7 @@
 import unittest,os,xmlrunner,time
 import HTMLTestRunner_Chart as HTMLTestRunner
 import sys
-sys.path.append(r"..\Common") #跨目录调用需要配置路径
+sys.path.append("../Common") #跨目录调用需要配置路径
 from SendEmail import sendemail
 
 
@@ -35,16 +35,16 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
         ##执行并且输出测试报告
         #txt格式
         if self.style == 1:
-            with open(r"..\TestResults\test_result.txt", "w", encoding="utf-8") as result_txt: #测试报告路径
+            with open("../TestResults/test_result.txt", "w", encoding="utf-8") as result_txt: #测试报告路径
                 runner_results = unittest.TextTestRunner(stream=result_txt,descriptions=result_txt,verbosity=2) # verbosity执行结果的详细程度，0<1<2，默认1
                 runner_results.run(suite) #执行案例
         #xml格式
         elif self.style == 2:
-            runner_results = xmlrunner.XMLTestRunner(output=r'..\TestResults')#指定报告放的目录
+            runner_results = xmlrunner.XMLTestRunner(output='../TestResults')#指定报告放的目录
             runner_results.run(suite) #执行案例
         #html格式
         else:
-            with open(r"..\TestResults\test_result.html", "wb") as result_html: #测试报告路径
+            with open("../TestResults/test_result.html", "wb") as result_html: #测试报告路径
                 runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=self.result_name,description="案例具体测试情况，请阅读附件",
                                                                verbosity=2) #retry=2,save_last_try=False
                 runner_results.run(suite) #执行案例

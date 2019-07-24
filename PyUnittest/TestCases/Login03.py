@@ -8,11 +8,11 @@
 
 import unittest
 import sys
-sys.path.append(r"..\Interfaces\Logins") #跨目录调用需要配置路径,接口路径
+sys.path.append("../Interfaces/Logins") #跨目录调用需要配置路径,接口路径
 import Login
-sys.path.append(r"..\Common") #跨目录调用需要配置路径,接口路径
+sys.path.append("../Common") #跨目录调用需要配置路径,接口路径
 import DataBases,file
-sys.path.append(r'..\TestDatas') #跨目录调用需要配置路径
+sys.path.append('../TestDatas') #跨目录调用需要配置路径
 from config import test_usercenter_db
 
 class Login_cases():
@@ -45,8 +45,8 @@ if __name__ == '__main__':
     re = Login_cases(username[0][0],123456,True)
     re.test_case01()
 
-    path1 = r"..\TestDatas\文本数据.txt"
-    path2 = r"..\TestDatas\客户数据表.csv"
+    path1 = "../TestDatas/文本数据.txt"
+    path2 = "../TestDatas/客户数据表.csv"
     re1 = file.FlieRead(path1)
     re2 = file.FlieRead(path2)
     # context = re1.txt(3)

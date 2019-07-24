@@ -10,7 +10,8 @@ import os,xmlrunner
 import time
 import HTMLTestRunner_Chart as HTMLTestRunner
 import sys
-sys.path.append(r"..\Common") #跨目录调用需要配置路径
+# sys.path.append(r"..\Common") #跨目录调用需要配置路径
+sys.path.append("../Common") #跨目录调用需要配置路径
 from SendEmail import sendemail
 
 
@@ -48,13 +49,13 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
         #     runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=result_name,description="案例具体测试情况，请阅读附件，谢谢",
         #                                                    verbosity=2)
         #     runner_results.run(suite) #执行案例
-        with open(r"..\TestResults\test_result.html", "wb") as result_html: #测试报告路径
+        with open("../TestResults/test_result.html", "wb") as result_html: #测试报告路径
             runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=result_name,description="案例具体测试情况，请阅读附件",
                                                     verbosity=2,save_last_try=False)#重试retry=2,
             runner_results.run(suite) #执行案例
 
         # #执行并且输出测试报告xml格式
-        # runner_results = xmlrunner.XMLTestRunner(output=r'..\TestResults')#指定报告放的目录
+        # runner_results = xmlrunner.XMLTestRunner(output='../TestResults')#指定报告放的目录
         # runner_results.run(suite) #执行案例
 
 

@@ -20,7 +20,8 @@ from selenium.common.exceptions import TimeoutException
 #火狐浏览器
 # browser = webdriver.Firefox(log_path=r"..\TestResults\geckodriver.log")
 #谷歌浏览器
-chrome = r"C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
+# chrome = r"C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
+chrome = "C:/Program Files (x86)/Google/Chrome/Application/chromedriver.exe"
 browser = webdriver.Chrome(executable_path=chrome)
 
 #设置请求网址

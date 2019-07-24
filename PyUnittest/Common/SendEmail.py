@@ -26,7 +26,8 @@ def email_appendix(content,title, from_name, from_address, to_address,serverport
     mg.attach(MIMEText(content,"html","utf-8"))#邮件正文内容
 
     # 构造附件，传送当前目录下的 test.txt 文件
-    appendix = MIMEText(open(r"..\TestResults\test_result.html", 'rb').read(), 'base64', 'utf-8')
+    # appendix = MIMEText(open(r"..\TestResults\test_result.html", 'rb').read(), 'base64', 'utf-8')
+    appendix = MIMEText(open("../TestResults/test_result.html", 'rb').read(), 'base64', 'utf-8')
     appendix["Content-Type"] = 'application/octet-stream'
     appendix["Content-Disposition"] = 'attachment; filename="test_result.html"'
     mg.attach(appendix)
@@ -94,12 +95,12 @@ def sendemail(send_content=2,file=1):
     title = "Python接口自动化测试报告  %s" % time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     if file == 1:#1表示固定文件，其他表示最新文件
         #发送固定文件
-        with open(r"..\TestResults\test_result.html", "rb") as file:#读取二进制
+        with open("../TestResults/test_result.html", "rb") as file:#读取二进制
             mail_body = file.read()
     else:
         #发送最新文件
-        dir = r"..\TestResults"  # 指定文件目录
-        # dir = "../TestResults"  # 指定文件目录
+        # dir = r"..\TestResults"  # 指定文件目录
+        dir = "../TestResults"  # 指定文件目录
         new_file = find_new_file(dir)  # 查找最新的html文件
         with open(r'%s'% new_file, "rb") as file:
             mail_body = file.read()

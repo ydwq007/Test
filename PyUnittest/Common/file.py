@@ -67,8 +67,10 @@ class FlieRead(object):
         return self.datas
 
 if __name__ == "__main__":
-    path1 = r"..\TestDatas\文本数据.txt"
-    path2 = r"..\TestDatas\客户数据表.csv"
+    # path1 = r"..\TestDatas\文本数据.txt"
+    # path2 = r"..\TestDatas\客户数据表.csv"
+    path1 = "../TestDatas/文本数据.txt"
+    path2 = "../TestDatas/客户数据表.csv"
     re1 = FlieRead(path1)
     re2 = FlieRead(path2)
     # context = re1.txt(3)

@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>login_接口测试报告_2019-07-23 17:58:00</title>
+    <title>Login_接口测试报告_2019-07-24 09:19:43</title>
     <meta name="generator" content="HTMLTestRunner 0.8.3"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
@@ -390,10 +390,10 @@ function hide_img(obj){
 }
 </script>
 <div class='heading'>
-<h1>login_接口测试报告_2019-07-23 17:58:00</h1>
-<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>开始时间:</strong> 2019-07-23 17:58:21</p>
-<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>执行耗时:</strong> 0:00:04.097</p>
-<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>测试状态:</strong> <span class="tj passCase">Pass</span>:6 <span class="tj failCase">Failure</span>:3 <span class="tj">通过率</span>:66.7%</p>
+<h1>Login_接口测试报告_2019-07-24 09:19:43</h1>
+<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>开始时间:</strong> 2019-07-24 09:19:43</p>
+<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>执行耗时:</strong> 0:00:03.605</p>
+<p class='attribute' style="font-family:Microsoft Yahei;font-size:20px"><strong>测试状态:</strong> <span class="tj passCase">Pass</span>:6 <span class="tj failCase">Failure</span>:1 <span class="tj">通过率</span>:85.7%</p>
 
 <p class='description' style="color:red;font-family:Microsoft Yahei;font-size:30px">案例具体测试情况，请阅读附件</p>
 </div>
@@ -405,12 +405,12 @@ function hide_img(obj){
 </div>
 
 <div id='show_detail_line' style=" float: left;  width: 100%;">
-<a class="abstract detail_button" href='javascript:showCase(0,1)'>概要[66.67%]</a>
+<a class="abstract detail_button" href='javascript:showCase(0,1)'>概要[85.71%]</a>
 <a class="passed  detail_button" href='javascript:showCase(1,1)'>通过[6]</a>
-<a class="failed  detail_button" href='javascript:showCase(2,1)'>失败[3]</a>
+<a class="failed  detail_button" href='javascript:showCase(2,1)'>失败[1]</a>
 <a class="errored  detail_button" href='javascript:showCase(3,1)'>错误[0]</a>
 <a class="skiped  detail_button"  href='javascript:showCase(4,1)'>跳过[0]</a>
-<a class="all detail_button" href='javascript:showCase(5,1)'>所有[9]</a>
+<a class="all detail_button" href='javascript:showCase(5,1)'>所有[7]</a>
 </div>
 <table id='result_table'>
 <colgroup>
@@ -434,11 +434,11 @@ function hide_img(obj){
 
 <tr class='failClass'>
     <td>Login02.Login_cases</td>
-    <td>8</td>
+    <td>6</td>
     <td>5</td>
-    <td>3</td>
+    <td>1</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c1.1',8)">查看</a></td>
+    <td><a href="javascript:showClassDetail('c1.1',6)">查看</a></td>
     <td>&nbsp;</td>
 </tr>
 
@@ -490,123 +490,27 @@ teamcity.diff_tools.EqualsAssertionError:  :: True != False
     <td>无截图</td>
 </tr>
 
-<tr id='ft1.1.2' class='none'>
-    <td ><div class='testcase'>test_case01: "用户名密码均正确的情况_retry:1</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <span class='status failCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1.2')" >
-        失败</a></span>
-    <div id='div_ft1.1.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.1.2: 
- 案例开始执行
-test_case01
----------打印响应结果：---------------
-username为gold001的用户登录失败！！！原因为：用户名或密码错误
-已调用接口
-案例完成执行 
-
-Traceback (most recent call last):
-  File "C:\Users\Administrator\.IntelliJIdea2018.3\config\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 32, in _patched_equals
-    old(self, first, second, msg)
-  File "D:\Python\lib\unittest\case.py", line 839, in assertEqual
-    assertion_func(first, second, msg=msg)
-  File "D:\Python\lib\unittest\case.py", line 832, in _baseAssertEqual
-    raise self.failureException(msg)
-AssertionError: True != False
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "D:\IdeaProjects\seeyon\PyUnittest\TestCases\Login02.py", line 84, in test_case01
-    self.assertEqual(expected_value, result)
-  File "C:\Users\Administrator\.IntelliJIdea2018.3\config\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 38, in _patched_equals
-    raise error
-teamcity.diff_tools.EqualsAssertionError:  :: True != False
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.1.3' class='none'>
-    <td ><div class='testcase'>test_case01: "用户名密码均正确的情况_retry:2</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <span class='status failCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1.3')" >
-        失败</a></span>
-    <div id='div_ft1.1.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.1.3: 
- 案例开始执行
-test_case01
----------打印响应结果：---------------
-username为gold001的用户登录失败！！！原因为：用户名或密码错误
-已调用接口
-案例完成执行 
-
-Traceback (most recent call last):
-  File "C:\Users\Administrator\.IntelliJIdea2018.3\config\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 32, in _patched_equals
-    old(self, first, second, msg)
-  File "D:\Python\lib\unittest\case.py", line 839, in assertEqual
-    assertion_func(first, second, msg=msg)
-  File "D:\Python\lib\unittest\case.py", line 832, in _baseAssertEqual
-    raise self.failureException(msg)
-AssertionError: True != False
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "D:\IdeaProjects\seeyon\PyUnittest\TestCases\Login02.py", line 84, in test_case01
-    self.assertEqual(expected_value, result)
-  File "C:\Users\Administrator\.IntelliJIdea2018.3\config\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 38, in _patched_equals
-    raise error
-teamcity.diff_tools.EqualsAssertionError:  :: True != False
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='pt1.1.4' class='hiddenRow'>
+<tr id='pt1.1.2' class='hiddenRow'>
     <td ><div class='testcase'>test_case01_1: 用户名密码均正确的情况，数据库获取</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.4')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.2')" >
         通过</a></span>
-    <div id='div_pt1.1.4' class="popup_window">
+    <div id='div_pt1.1.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.4').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.2').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1.4: 
+pt1.1.2: 
  案例开始执行
 test_case01_1
 查询成功共1条数据
 (('gold001',),)
 ---------打印响应结果：---------------
-username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU2Mzg3NTkwMywic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1NjM4ODMxMDMsInVpZCI6IjE1NjI2NTAzNzUwMTkwMDAwIn0.hM9mDHO6ecPtVtmOnPKrRf17Fz2uzLDMoqEHnclJrSI
+username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU2MzkzMTE4Mywic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1NjM5MzgzODMsInVpZCI6IjE1NjI2NTAzNzUwMTkwMDAwIn0.h1TiE3Qsm-O5cyCOu38Rx05Vs8KKiEmzfCJ48SdUDd4
 已调用接口
 案例完成执行 
 
@@ -619,21 +523,21 @@ username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhb
     <td>无截图</td>
 </tr>
 
-<tr id='pt1.1.5' class='hiddenRow'>
+<tr id='pt1.1.3' class='hiddenRow'>
     <td ><div class='testcase'>test_case02: 密码错误的情况</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.5')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.3')" >
         通过</a></span>
-    <div id='div_pt1.1.5' class="popup_window">
+    <div id='div_pt1.1.3' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.5').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.3').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1.5: 
+pt1.1.3: 
  案例开始执行
 test_case02
 ---------打印响应结果：---------------
@@ -650,21 +554,21 @@ username为gold001的用户登录失败！！！原因为：用户名或密码�
     <td>无截图</td>
 </tr>
 
-<tr id='pt1.1.6' class='hiddenRow'>
+<tr id='pt1.1.4' class='hiddenRow'>
     <td ><div class='testcase'>test_case03: 密码为空的情况</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.6')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.4')" >
         通过</a></span>
-    <div id='div_pt1.1.6' class="popup_window">
+    <div id='div_pt1.1.4' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.6').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.4').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1.6: 
+pt1.1.4: 
  案例开始执行
 test_case03
 ---------打印响应结果：---------------
@@ -681,21 +585,21 @@ username为gold001的用户登录失败！！！原因为：参数错误
     <td>无截图</td>
 </tr>
 
-<tr id='pt1.1.7' class='hiddenRow'>
+<tr id='pt1.1.5' class='hiddenRow'>
     <td ><div class='testcase'>test_case04: 用户名为空的情况</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.7')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.5')" >
         通过</a></span>
-    <div id='div_pt1.1.7' class="popup_window">
+    <div id='div_pt1.1.5' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.7').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.5').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1.7: 
+pt1.1.5: 
  案例开始执行
 test_case04
 ---------打印响应结果：---------------
@@ -712,21 +616,21 @@ username为空的用户登录失败！！！原因为：参数错误
     <td>无截图</td>
 </tr>
 
-<tr id='pt1.1.8' class='hiddenRow'>
+<tr id='pt1.1.6' class='hiddenRow'>
     <td ><div class='testcase'>test_case05: 用户名错误的情况</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.8')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.6')" >
         通过</a></span>
-    <div id='div_pt1.1.8' class="popup_window">
+    <div id='div_pt1.1.6' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.8').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.6').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1.8: 
+pt1.1.6: 
  案例开始执行
 test_case05
 ---------打印响应结果：---------------
@@ -772,7 +676,7 @@ pt1.2.1:
 D:\Python\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning)
 ---------打印响应结果：---------------
-username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU2Mzg3NTkwMCwic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1NjM4ODMxMDAsInVpZCI6IjE1NjI2NTAzNzUwMTkwMDAwIn0.AklknD90YYHm3-xesV2CQtHSw2Odd00W2lCpZqkSDyU
+username为gold001的用户登录成功！！！token为：eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU2MzkzMTE4MSwic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1NjM5MzgzODEsInVpZCI6IjE1NjI2NTAzNzUwMTkwMDAwIn0.VAE8ssvEDXXftLbMXTeTqrZLyCr3CC6PlBUS6u9LFXM
 已调用接口
 
 第2次执行案例，案例内容：密码错误的情况
@@ -809,9 +713,9 @@ username为gold101的用户登录失败！！！原因为：用户名或密码�
 
 <tr id='total_row'>
     <th>统计</th>
-    <th>9</th>
+    <th>7</th>
     <th>6</th>
-    <th>3</th>
+    <th>1</th>
     <th>0</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
@@ -819,7 +723,7 @@ username为gold101的用户登录失败！！！原因为：用户名或密码�
 </table>
 <script>
     showCase(0,1);
-    drawCircle('circle1',6, 3, 0);
+    drawCircle('circle1',6, 1, 0);
 </script>
 
 <div id='ending'>&nbsp;</div>
