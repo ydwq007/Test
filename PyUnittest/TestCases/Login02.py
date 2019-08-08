@@ -11,7 +11,7 @@ import sys
 sys.path.append("../Interfaces/Logins") #跨目录调用需要配置路径,接口路径
 import Login
 sys.path.append("../Common") #跨目录调用需要配置路径,接口路径
-import DataBases,file
+import DataBases,file,smoke
 sys.path.append('../TestDatas') #跨目录调用需要配置路径
 from config import test_usercenter_db
 
@@ -29,7 +29,8 @@ from config import test_usercenter_db
 #     finally:
 #         print("已调用接口")
 
-class Login_cases(unittest.TestCase): # 继承unittest.TestCase
+parm = smoke.Smoke(False).smoke()
+class Logins(unittest.TestCase): # 继承unittest.TestCase
 
     @classmethod
     def setUpClass(cls):
@@ -49,9 +50,11 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
         # 每个测试用例执行之后做操作
         print("案例完成执行","\n")
 
-    def test_case01_1(self):
+class Login_cases(Logins):
+
+    def test_case01(self):
         """用户名密码均正确的情况，数据库获取"""
-        print("test_case01_1")
+        print("test_case01")
         #测试参数
         #连接数据库，返回用户名数据
         db = DataBases.Mysql_links(test_usercenter_db["host"],test_usercenter_db["username"],test_usercenter_db["password"],
@@ -71,9 +74,10 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
         finally:
             print("已调用接口")
 
-    def test_case01(self):
+    @unittest.skip("直接跳过测试")
+    def test_case02(self):
         """"用户名密码均正确的情况"""
-        print("test_case01")
+        print("test_case02")
         #测试参数
         username = "gold001"
         password = "1234561"
@@ -87,9 +91,10 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
         finally:
             print("已调用接口")
 
-    def test_case02(self):
+    @unittest.skipIf(parm,"当括号内的条件为真时，跳过测试")
+    def test_case03(self):
         """密码错误的情况"""
-        print("test_case02")
+        print("test_case03")
         #测试参数
         username = "gold001"
         password = "1234561"
@@ -103,9 +108,10 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
         finally:
             print("已调用接口")
 
-    def test_case03(self):
+    @unittest.skipUnless(parm,"当括号内的条件为真时，执行测试")
+    def test_case04(self):
         """密码为空的情况"""
-        print("test_case03")
+        print("test_case04")
         #测试参数
         username = "gold001"
         password = ""
@@ -119,9 +125,9 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
         finally:
             print("已调用接口")
 
-    def test_case04(self):
+    def test_case05(self):
         """用户名为空的情况"""
-        print("test_case04")
+        print("test_case05")
         #测试参数
         username = ""
         password = "123456"
@@ -135,9 +141,9 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
         finally:
             print("已调用接口")
 
-    def test_case05(self):
+    def test_case06(self):
         """用户名错误的情况"""
-        print("test_case05")
+        print("test_case06")
         #测试参数
         username = "gold0011"
         password = "123456"

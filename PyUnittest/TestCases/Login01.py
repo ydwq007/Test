@@ -29,6 +29,7 @@ class Login_cases(unittest.TestCase): # 继承unittest.TestCase
                 result = Login.re_login(username,password,"") #获取接口成功会失败的标记
                 #统计案例执行情况
                 #如果用断言判断执行情况，需要添加断言失败的异常，并且将失败的断言进行统计
+                print(self.assertEqual(i[3], result))
                 if self.assertEqual(i[3], result) == None:
                     pass_count += 1
 

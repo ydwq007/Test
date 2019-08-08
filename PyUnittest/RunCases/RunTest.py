@@ -9,16 +9,18 @@ import unittest,os,xmlrunner,time
 import HTMLTestRunner_Chart as HTMLTestRunner
 import sys
 sys.path.append("../Common") #跨目录调用需要配置路径
+# sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\Common") #跨目录调用需要配置路径
 from SendEmail import sendemail
+import smoke
 
 
 class RunCase(unittest.TestCase):# 继承unittest.TestCase
 
     def test_case(self):
         #参数配置
-        # self.casespath = r"..\TestCases" #执行前需检验路径和文件
+        # self.casespath = r"D:\IdeaProjects\seeyon\PyUnittest\TestCases" #执行前需检验路径和文件
         self.casespath = "../TestCases" #执行前需检验路径和文件
-        self.casesname = "login0" #执行文件
+        self.casesname = "login02" #执行文件
         self.style = 3 #发送邮件风格
         self.run_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.result_name = "%s_接口测试报告_%s" % (self.casesname,self.run_time) #报告名称
