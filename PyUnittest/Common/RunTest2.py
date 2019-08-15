@@ -40,16 +40,16 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
              suite.addTests(case)#把所有的测试用例添加进来
 
         # #执行并且输出测试报告txt格式
-        # with open(r"..\TestResults\test_result.txt", "w", encoding="utf-8") as result_txt: #测试报告路径
+        # with open(r"..\TestResults\TestResult.txt", "w", encoding="utf-8") as result_txt: #测试报告路径
         #     runner_tests = unittest.TextTestRunner(stream=result_txt,descriptions=result_txt1,verbosity=2) # verbosity执行结果的详细程度，0<1<2，默认1
         #     runner_tests.run(suite)
 
         # #执行并且输出测试报告html格式
-        # with open(r"..\TestResults\test_result.html", "wb") as result_html: #测试报告路径
+        # with open(r"..\TestResults\TestResult.html", "wb") as result_html: #测试报告路径
         #     runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=result_name,description="案例具体测试情况，请阅读附件，谢谢",
         #                                                    verbosity=2)
         #     runner_results.run(suite) #执行案例
-        with open("../TestResults/test_result.html", "wb") as result_html: #测试报告路径
+        with open("../TestResults/TestResult.html", "wb") as result_html: #测试报告路径
             runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=result_name,description="案例具体测试情况，请阅读附件",
                                                     verbosity=2,save_last_try=False)#重试retry=2,
             runner_results.run(suite) #执行案例

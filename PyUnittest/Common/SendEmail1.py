@@ -26,7 +26,6 @@ def email_appendix(content,title, from_name, from_address, to_address,serverport
     mg.attach(MIMEText(content,"html","utf-8"))#邮件正文内容
 
     # 构造附件，传送当前目录下的 test.txt 文件
-    # appendix = MIMEText(open(r"..\TestResults\test_result.html", 'rb').read(), 'base64', 'utf-8')
     appendix = MIMEText(open(sendfile(), 'rb').read(), 'base64', 'utf-8')
     appendix["Content-Type"] = 'application/octet-stream'
     appendix["Content-Disposition"] = 'attachment; filename="TestResult.html"'
