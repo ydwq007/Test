@@ -70,8 +70,8 @@ def email_string(content, title, from_name, from_address, to_address, serverport
 #获取最新文件
 def find_new_file(dir): #参数为文件夹路径
     file_lists = os.listdir(dir) #查找路径下的所有文件
-    file_lists.sort(key=lambda fn: os.path.getmtime(dir + "\\" + fn)
-    if not os.path.isdir(dir + "\\" + fn)
+    file_lists.sort(key=lambda fn: os.path.getmtime(dir + "/" + fn)
+    if not os.path.isdir(dir + "/" + fn)
     else 0)
     file = os.path.join(dir, file_lists[-1])
     return file
@@ -117,7 +117,7 @@ def sendemail(send_content=2):
     else:
         #调用附件邮箱配置
         email_appendix(mail_body,title,config["from_name"],config["from"],config["to"],config["serverport"],config["serverip"],
-                       config["username"], config["password"])
+                           config["username"], config["password"])
 
 if __name__ == "__main__":
-    sendemail() #参数1表示字符串邮件，2表示发送附件邮件，默认2
+    sendemail() #第一个参数（1表示字符串邮件，2表示发送附件邮件，默认2），第二个参数（#1表示固定文件，2表示最新文件，默认2）
