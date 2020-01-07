@@ -7,10 +7,10 @@
 描述：创建新商品数据
 """
 
-import sys,Json_data,requests,BasicDatas
+import sys,json,requests,BasicDatas
 from bson import json_util
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas")
-sys.path.append('../Interfaces') #跨目录调用需要配置路径,接口路径
+sys.path.append("../../TestDatas")
+sys.path.append('../../Interfaces') #跨目录调用需要配置路径,接口路径
 import Logins.getMallID as Login
 
 def addGoodsNew(MALL_ID):
@@ -74,7 +74,7 @@ def addGoodsNew(MALL_ID):
         "MALL_ID":MALL_ID
     }
 
-    datas = Json_data.dumps(data)
+    datas = json.dumps(data)
 
     #调用接口
     addGoodsNew_request = requests.post(addGoodsNew_url,data=datas,headers=header,verify=False)
@@ -86,7 +86,7 @@ def addGoodsNew(MALL_ID):
     print("请求数据：\n%s" % json_util.dumps(datas,ensure_ascii=False,indent=4))
 
     #获取响应数据
-    addGoodsNew_response = Json_data.loads(addGoodsNew_request.text)
+    addGoodsNew_response = json.loads(addGoodsNew_request.text)
 
     #打印响应数据
     print("--------------------响应数据如下：---------------------------------")

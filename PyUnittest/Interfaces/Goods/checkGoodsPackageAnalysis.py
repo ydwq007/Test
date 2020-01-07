@@ -16,9 +16,9 @@
 描述：创建新商品数据
 """
 
-import sys,Json_data,requests,BasicDatas
+import sys,json,requests,BasicDatas
 from bson import json_util
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas")
+sys.path.append("../../TestDatas")
 
 def checkGoodsPackageAnalysis(Authorization,goods_file):
 
@@ -36,7 +36,7 @@ def checkGoodsPackageAnalysis(Authorization,goods_file):
         # "MALL_ID":Authorization
     }
 
-    datas = Json_data.dumps(data)
+    datas = json.dumps(data)
 
     #调用接口
     checkGoodsPackageAnalysis_request = requests.post(checkGoodsPackageAnalysis_url,data=datas,headers=header,verify=False)
@@ -47,7 +47,7 @@ def checkGoodsPackageAnalysis(Authorization,goods_file):
     print("请求数据：\n%s" % json_util.dumps(datas,ensure_ascii=False,indent=4))
 
     #获取响应数据
-    checkGoodsPackageAnalysis_response = Json_data.loads(checkGoodsPackageAnalysis_request.text)
+    checkGoodsPackageAnalysis_response = json.loads(checkGoodsPackageAnalysis_request.text)
 
     #打印响应数据
     print("--------------------响应数据如下：---------------------------------")

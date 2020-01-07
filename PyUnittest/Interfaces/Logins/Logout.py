@@ -6,11 +6,11 @@
 更新时间：2019-08-20
 说明：由于PC端是PHP渲染，通过表单提交，但是无法做登录接口测试，故采取移动端的登录接口
 """
-import requests,Json_data
+import requests,json
 from bson import json_util
 # logging.basicConfig(level=logging.DEBUG)
 import sys
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas") #跨目录调用需要配置路径
+sys.path.append("../../TestDatas") #跨目录调用需要配置路径
 import BasicDatas
 
 #登录接口地址
@@ -21,13 +21,13 @@ logout_data = {
         "m":"userMobile",
         "a":"logout"
 }
-logout_datas = Json_data.dumps(logout_data)
+logout_datas = json.dumps(logout_data)
 def re_logout():
     #请求接口
     request_logout = requests.post(login_url, data=logout_datas, headers=BasicDatas.headers, verify=False) #调用接口（url,参数，类型）#verify=False 跳过认证
 
     #获取响应数据
-    response_logout= Json_data.loads(request_logout.text)
+    response_logout= json.loads(request_logout.text)
 
     # print("-----------打印请求数据如下：--------------")
     print(login_url)

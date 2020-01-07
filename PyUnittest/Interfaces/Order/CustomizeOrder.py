@@ -7,9 +7,9 @@
 描述：接口需要修改，暂缓封装
 """
 
-import sys,Json_data,requests,BasicDatas
+import sys,json,requests,BasicDatas
 from bson import json_util
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas")
+sys.path.append("../../TestDatas")
 
 def customizeorder(Authorization,type=1,order_id=""):
 
@@ -48,12 +48,12 @@ def customizeorder(Authorization,type=1,order_id=""):
         "Authorization":Authorization
     }
 
-    datas = Json_data.dumps(data)
+    datas = json.dumps(data)
     #调用接口
     request_customizeorder = requests.post(customizeorder_url, data=datas,headers=header,verify=False) #调用接口（url,参数，类型）#verify=False 跳过认证
 
     #获取响应数据
-    response_customizeorder= Json_data.loads(request_customizeorder.text)
+    response_customizeorder= json.loads(request_customizeorder.text)
 
     print("-----------打印请求数据如下：--------------")
     print(customizeorder_url)

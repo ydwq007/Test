@@ -84,11 +84,11 @@ def find_new_file(dir): #参数为文件夹路径
 def sendfile(parm=2):
     if parm == 1:#1表示固定文件，其他表示最新文件
         #发送固定文件
-        new_file = "../TestResults/TestResult.html"
+        new_file = "../../TestResults/TestResult.html"
         return new_file
     else:
         #发送最新文件
-        dir = r"D:\IdeaProjects\interfacetest\TestResults"  # wind下调试路径，指定文件目录
+        dir = r"../../TestResults"  # wind下调试路径，指定文件目录
         # dir = "/var/lib/jenkins/workspace/ZY/PyUnittest/TestResults/"  # Linux下调试路径指定文件目录
         # dir = "../TestResults"  # Linux下调试路径指定文件目录
         new_file = find_new_file(dir)  # 查找最新的html文件

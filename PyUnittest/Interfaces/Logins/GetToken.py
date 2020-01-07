@@ -10,7 +10,7 @@
 import requests,re
 # logging.basicConfig(level=logging.DEBUG)
 import sys
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas") #跨目录调用需要配置路径
+sys.path.append("../../TestDatas") #跨目录调用需要配置路径
 import BasicDatas
 
 def getToken():

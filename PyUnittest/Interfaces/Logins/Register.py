@@ -7,12 +7,12 @@
 说明：由于PC端是PHP渲染，通过表单提交，仅支持手机号注册A类账号
 """
 
-import requests,Json_data,re
+import requests,json,re
 from bson import json_util
 # from SendCode import randcode
 import Logins.SendCode as SendCode
 import sys
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas") #跨目录调用需要配置路径
+sys.path.append("../../TestDatas") #跨目录调用需要配置路径
 import BasicDatas
 # logging.basicConfig(level=logging.DEBUG)
 
@@ -30,7 +30,7 @@ data = {
     "mobile": BasicDatas.mobile,
     "randcode":randcode[0] #手机验证码
 }
-datas = Json_data.dumps(data) #字典转为json str
+datas = json.dumps(data) #字典转为json str
 
 #请求接口
 request_register = requests.get(register_url, data=datas, headers=BasicDatas.headers, verify=False) #调用接口（url,参数，类型）#verify=False 跳过认证

@@ -7,9 +7,9 @@
 描述：查询订单详情，需要登录，可以查询任意普通订单和试用单（包括属于当前人或不属于的）
 """
 
-import sys,Json_data,requests,BasicDatas
+import sys,json,requests,BasicDatas
 from bson import json_util
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas")
+sys.path.append("../../TestDatas")
 
 def orderdetail(Authorization,order_id):
 
@@ -26,12 +26,12 @@ def orderdetail(Authorization,order_id):
         "Authorization":Authorization
     }
 
-    datas = Json_data.dumps(data)
+    datas = json.dumps(data)
     #调用接口
     request_orderdetail = requests.post(orderdetail_url, data=datas,headers=header,verify=False) #调用接口（url,参数，类型）#verify=False 跳过认证
 
     #获取响应数据
-    response_orderdetail= Json_data.loads(request_orderdetail.text)
+    response_orderdetail= json.loads(request_orderdetail.text)
 
     print("-----------打印请求数据如下：--------------")
     print(orderdetail_url)

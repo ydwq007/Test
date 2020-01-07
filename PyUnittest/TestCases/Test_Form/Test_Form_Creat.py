@@ -8,12 +8,12 @@
 """
 import unittest,sys
 sys.path.append('../../TestDatas') #跨目录调用需要配置路径，测试数据路径
-from BasicDatas import usernames,password
+from BasicDatas import usernames,password,test_url_chome
 sys.path.append('../../Interfaces') #跨目录调用需要配置路径,接口路径
 import Logins.Login as Login
 import FormVote.Form_Creat as Form_Creat
 
-
+url = test_url_chome
 class Form_Creat_Cases(unittest.TestCase): # 继承unittest.TestCase
 
     @classmethod
@@ -70,7 +70,7 @@ class Form_Creat_Cases(unittest.TestCase): # 继承unittest.TestCase
                 }]
         }
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
 
         #调用上传表单接口
         try:
@@ -105,7 +105,7 @@ class Form_Creat_Cases(unittest.TestCase): # 继承unittest.TestCase
                 }]
         }
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
 
         #调用上传表单接口
         try:
@@ -146,7 +146,7 @@ class Form_Creat_Cases(unittest.TestCase): # 继承unittest.TestCase
     def test_04(self):
         """上传表单--真实姓名未填写"""
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
         #参数
         self.data = {
             "realname": "", #真实姓名
@@ -173,7 +173,7 @@ class Form_Creat_Cases(unittest.TestCase): # 继承unittest.TestCase
     def test_05(self):
         """上传表单--单位名称未填写"""
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
         #参数
         self.data = {
             "realname": self.realname, #真实姓名
@@ -200,7 +200,7 @@ class Form_Creat_Cases(unittest.TestCase): # 继承unittest.TestCase
     def test_06(self):
         """上传表单--电话号码未填写"""
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
         #参数
         self.data = {
             "realname": self.realname, #真实姓名
@@ -227,7 +227,7 @@ class Form_Creat_Cases(unittest.TestCase): # 继承unittest.TestCase
     def test_07(self):
         """上传表单--表单文件未填写"""
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
         #参数
         self.data = {
             "realname": self.realname, #真实姓名
@@ -254,7 +254,7 @@ class Form_Creat_Cases(unittest.TestCase): # 继承unittest.TestCase
     def test_08(self):
         """上传表单--表单图片未填写"""
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
         #参数
         self.data = {
             "realname": self.realname, #真实姓名
@@ -281,7 +281,7 @@ class Form_Creat_Cases(unittest.TestCase): # 继承unittest.TestCase
     def test_09(self):
         """上传表单--领域未填写"""
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
         #参数
         self.data = {
             "realname": self.realname, #真实姓名
@@ -308,7 +308,7 @@ class Form_Creat_Cases(unittest.TestCase): # 继承unittest.TestCase
     def test_10(self):
         """上传表单--描述未填写"""
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
         #参数
         self.data = {
             "realname": self.realname, #真实姓名
@@ -356,7 +356,7 @@ class Form_Creat_Cases(unittest.TestCase): # 继承unittest.TestCase
                 }]
         }
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
 
         #调用上传表单接口
         try:

@@ -5,10 +5,10 @@
 更新人：魏奇
 更新时间：2019-08-20
 """
-import Json_data,requests
+import json,requests
 from bson import json_util
 import sys
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas") #跨目录调用需要配置路径
+sys.path.append("../../TestDatas") #跨目录调用需要配置路径
 import BasicDatas
 import Logins.Login as Login
 
@@ -29,12 +29,12 @@ def getcartlist(user_id,Authorization):
         "Connection":"keep-alive",
         "Authorization":Authorization
     }
-    datas = Json_data.dumps(data)
+    datas = json.dumps(data)
     #调用接口
     request_baseinfor = requests.post(search_url, data=datas,headers=header,verify=False) #调用接口（url,参数，类型）#verify=False 跳过认证
 
     #获取响应数据
-    response_search= Json_data.loads(request_baseinfor.text)
+    response_search= json.loads(request_baseinfor.text)
 
     # print("-----------打印请求数据如下：--------------")
     print(search_url)

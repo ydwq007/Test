@@ -6,10 +6,10 @@
 更新时间：2019-09-18
 描述：获取试用单列表数据
 """
-import Json_data,requests
+import json,requests
 from bson import json_util
 import sys
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas") #跨目录调用需要配置路径
+sys.path.append("../../TestDatas") #跨目录调用需要配置路径
 import BasicDatas
 
 #获取创建订单地址
@@ -23,12 +23,12 @@ def nomalorderlist(Authorization,data):
         "Authorization":Authorization
     }
 
-    datas = Json_data.dumps(data)
+    datas = json.dumps(data)
     #调用接口
     request_nomalorderlist = requests.post(nomalorderlist_url, data=datas,headers=header,verify=False) #调用接口（url,参数，类型）#verify=False 跳过认证
 
     #获取响应数据
-    response_nomalorderlist= Json_data.loads(request_nomalorderlist.text)
+    response_nomalorderlist= json.loads(request_nomalorderlist.text)
 
     print("-----------打印请求数据如下：--------------")
     print(nomalorderlist_url)

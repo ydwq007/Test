@@ -11,7 +11,7 @@ import requests,json, sys
 import Logins.SendCode as SendCode
 # import unittest
 # from unittest import TestCase
-sys.path.append('../TestDatas') #跨目录调用需要配置路径
+sys.path.append('../../TestDatas') #跨目录调用需要配置路径
 from bson import json_util
 import BasicDatas
 # # logging.basicConfig(level=logging.DEBUG)

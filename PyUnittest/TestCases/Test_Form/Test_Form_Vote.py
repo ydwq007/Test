@@ -8,14 +8,14 @@
 """
 import unittest,sys
 sys.path.append('../../TestDatas') #跨目录调用需要配置路径，测试数据路径
-from BasicDatas import usernames,password
+from BasicDatas import usernames,password,test_url_chome
 sys.path.append("../../Common") #跨目录调用需要配置路径,接口路径
 import Plan
 sys.path.append('../../Interfaces') #跨目录调用需要配置路径,接口路径
 import Logins.Login as Login
 import FormVote.Form_Vote as Form_Vote
 
-
+url = test_url_chome
 class Form_Vote_Cases(Plan.Plan): # 继承unittest.TestCase
 
 
@@ -24,7 +24,7 @@ class Form_Vote_Cases(Plan.Plan): # 继承unittest.TestCase
         self.user = usernames[0]
         self.passw = password
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
 
         #调用表单投票接口
         try:
@@ -53,7 +53,7 @@ class Form_Vote_Cases(Plan.Plan): # 继承unittest.TestCase
         self.user = usernames[0]
         self.passw = password
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
         self.login_token = self.result_login[3]
         #调用表单投票接口
         try:
@@ -67,7 +67,7 @@ class Form_Vote_Cases(Plan.Plan): # 继承unittest.TestCase
         self.user = usernames[0]
         self.passw = password
         #调用登录接口
-        self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功会失败的标记
+        self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功会失败的标记
 
         #调用表单投票接口
         try:

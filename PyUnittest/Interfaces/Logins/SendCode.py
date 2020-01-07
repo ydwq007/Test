@@ -10,7 +10,7 @@
 import requests,json,re
 from bson import json_util
 import sys
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas") #跨目录调用需要配置路径
+sys.path.append("../../TestDatas") #跨目录调用需要配置路径
 import BasicDatas
 # logging.basicConfig(level=logging.DEBUG)
 

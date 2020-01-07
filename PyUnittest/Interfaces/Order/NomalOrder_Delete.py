@@ -7,9 +7,9 @@
 描述：云商城普通订单的删除操作（未完成）
 """
 
-import sys,Json_data,requests,BasicDatas
+import sys,json,requests,BasicDatas
 from bson import json_util
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas")
+sys.path.append("../../TestDatas")
 
 def nomalorderdelete(Authorization,order_id):
 
@@ -26,7 +26,7 @@ def nomalorderdelete(Authorization,order_id):
         "Authorization":Authorization
     }
 
-    datas = Json_data.dumps(data)
+    datas = json.dumps(data)
     #调用接口
     request_nomalorderdelete = requests.post(nomalorderdelete_url, data=datas,headers=header,verify=False) #调用接口（url,参数，类型）#verify=False 跳过认证
 
@@ -34,7 +34,7 @@ def nomalorderdelete(Authorization,order_id):
     print(type(request_nomalorderdelete.text))
 
     #获取响应数据
-    response_nomalorderdelete= Json_data.loads(request_nomalorderdelete.text)
+    response_nomalorderdelete= json.loads(request_nomalorderdelete.text)
     # response_nomalorderdelete= json.load(request_nomalorderdelete.text)
 
     print("-----------打印请求数据如下：--------------")

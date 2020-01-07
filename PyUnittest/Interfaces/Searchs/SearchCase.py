@@ -7,10 +7,10 @@
 说明：
 """
 
-import requests,Json_data
+import requests,json
 # logging.basicConfig(level=logging.DEBUG)
 import sys
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas") #跨目录调用需要配置路径
+sys.path.append("../../TestDatas") #跨目录调用需要配置路径
 import BasicDatas
 
 
@@ -24,12 +24,12 @@ def case_search(keywords):
         "update_time_sort":"asc",#更新时间，desc / asc
         "case_category_id":"" #分类ID，允许多选，英文逗号隔开
     }
-    datas = Json_data.dumps(data)
+    datas = json.dumps(data)
     #调用接口
     request_search = requests.post(search_url, data=datas, headers=BasicDatas.headers, verify=False) #调用接口（url,参数，类型）#verify=False 跳过认证
 
     #获取响应数据
-    response_search= Json_data.loads(request_search.text)
+    response_search= json.loads(request_search.text)
 
     # print("-----------打印请求数据如下：--------------")
     print(search_url)

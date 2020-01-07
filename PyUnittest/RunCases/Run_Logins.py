@@ -7,9 +7,9 @@
 """
 import unittest,os,xmlrunner,time
 import sys
-sys.path.append("../Common") #跨目录调用需要配置路径
+sys.path.append("../../Common") #跨目录调用需要配置路径
 from SendEmail import sendemail
-sys.path.append("../TestResults")
+sys.path.append("../../TestResults")
 import HTMLTestRunner_Chart as HTMLTestRunner
 
 
@@ -24,8 +24,8 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
         self.run_time1 = time.strftime("%Y%m%d_%H%M%S", time.localtime())
         self.result_name = "%s_接口测试报告_%s" % (self.casesname,self.run_time) #报告名称
         self.tester = "魏奇" #执行人员
-        # self.test_reult = "../TestResult/TestResult_%s.html" % self.run_time1
-        self.test_reult = r"D:\IdeaProjects\Seeyon\PyUnittest\TestResults\TestResult_%s.html" % self.run_time1 #winds下路径
+        self.test_reult = r"../../TestResults/TestResult_%s.html" % self.run_time1
+        # self.test_reult = r"D:\IdeaProjects\interfacetest\TestResults\TestResult_%s.html" % self.run_time1
         # self.test_reult = "/var/lib/jenkins/workspace/ZY/PyUnittest/TestResults/TestResult_%s.html" % self.run_time1"  # Linux下调试路径指定文件目录
         print(self.test_reult)
 
@@ -40,12 +40,12 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
         ##执行并且输出测试报告
         #txt格式
         if self.style == 1:
-            with open("../TestResults/TestResult.txt", "w", encoding="utf-8") as result_txt: #测试报告路径
+            with open("../../TestResults/TestResult.txt", "w", encoding="utf-8") as result_txt: #测试报告路径
                 runner_results = unittest.TextTestRunner(stream=result_txt,descriptions=result_txt,verbosity=2) # verbosity执行结果的详细程度，0<1<2，默认1
                 runner_results.run(suite) #执行案例
         #xml格式
         elif self.style == 2:
-            runner_results = xmlrunner.XMLTestRunner(output='../TestResults')#指定报告放的目录
+            runner_results = xmlrunner.XMLTestRunner(output='../../TestResults')#指定报告放的目录
             runner_results.run(suite) #执行案例
         #html格式
         else:

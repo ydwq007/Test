@@ -7,10 +7,10 @@
 描述：cloud获取用户信息（包括用户信息，所属客户单位信息，经销商信息），需要用户登录为前提
 """
 
-import Json_data,requests
+import json,requests
 from bson import json_util
 import sys
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas") #跨目录调用需要配置路径
+sys.path.append("../../TestDatas") #跨目录调用需要配置路径
 import BasicDatas
 
 
@@ -33,7 +33,7 @@ def getServiceOrgId(Authorization):
     request_getServiceOrgId = requests.post(getServiceOrgId_url, headers=header,verify=False)
 
     #获取响应数据
-    response_getServiceOrgId= Json_data.loads(request_getServiceOrgId.text)
+    response_getServiceOrgId= json.loads(request_getServiceOrgId.text)
 
     print("-----------打印请求数据如下：--------------")
     print(getServiceOrgId_url)

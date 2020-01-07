@@ -7,9 +7,9 @@
 描述：
 """
 
-import sys,Json_data,requests,BasicDatas,re
+import sys,json,requests,BasicDatas,re
 from bson import json_util
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas")
+sys.path.append("../../TestDatas")
 
 def login_shop(username,password):
 
@@ -27,7 +27,7 @@ def login_shop(username,password):
         "Connection":"keep-alive"
     }
 
-    datas = Json_data.dumps(data)
+    datas = json.dumps(data)
 
     #调用接口
     login_shop_request = requests.post(login_shop_url,data=datas,headers=header,verify=False)
@@ -40,11 +40,11 @@ def login_shop(username,password):
 
     #获取ucuid
     # print(type(login_shop_request.headers))
-    header_1 = Json_data.loads(Json_data.dumps(dict(login_shop_request.headers)))
+    header_1 = json.loads(json.dumps(dict(login_shop_request.headers)))
     # print(type(header_1))
     # print(header_1)
     #利用re正则，获取ucuid
-    re_ucuid_1 = re.findall(r'ucuid=(.+?);', Json_data.dumps(header_1)) #\u4e00-\u9fa5匹配汉字，A-Z匹配大写英文
+    re_ucuid_1 = re.findall(r'ucuid=(.+?);', json.dumps(header_1)) #\u4e00-\u9fa5匹配汉字，A-Z匹配大写英文
     # print(type(re_ucuid_1))
     print(re_ucuid_1)
     uc_header_1 = {
@@ -52,7 +52,7 @@ def login_shop(username,password):
     }
 
     #获取响应数据
-    login_shop_response = Json_data.loads(login_shop_request.text)
+    login_shop_response = json.loads(login_shop_request.text)
 
     #打印响应数据
     print("--------------------响应数据如下：---------------------------------")
@@ -79,11 +79,11 @@ def login_shop(username,password):
 
 
 
-        header_2 = Json_data.loads(Json_data.dumps(dict(back_url_request.headers)))
+        header_2 = json.loads(json.dumps(dict(back_url_request.headers)))
         # print(type(header_2))
         # print(header_2)
         #利用re正则，获取back_re_url
-        re_ucuid_2 = re.findall(r'ucuid=(.+?);', Json_data.dumps(header_2)) #\u4e00-\u9fa5匹配汉字，A-Z匹配大写英文
+        re_ucuid_2 = re.findall(r'ucuid=(.+?);', json.dumps(header_2)) #\u4e00-\u9fa5匹配汉字，A-Z匹配大写英文
         # print(type(re_ucuid_2))
         print(re_ucuid_2)
         uc_header_2 = {

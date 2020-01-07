@@ -6,10 +6,10 @@
 更新时间：2019-09-1
 描述：云商城试用订单创建
 """
-import Json_data,requests
+import json,requests
 from bson import json_util
 import sys
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas") #跨目录调用需要配置路径
+sys.path.append("../../TestDatas") #跨目录调用需要配置路径
 import BasicDatas
 
 #获取创建订单地址
@@ -33,12 +33,12 @@ def trialordercreate(Authorization,data):
         "Connection":"keep-alive",
         "Authorization":Authorization
     }
-    datas = Json_data.dumps(data)
+    datas = json.dumps(data)
     #调用接口
     request_trialordercreate = requests.post(trialordercreate_url, data=datas,headers=header,verify=False) #调用接口（url,参数，类型）#verify=False 跳过认证
 
     #获取响应数据
-    response_trialordercreate= Json_data.loads(request_trialordercreate.text)
+    response_trialordercreate= json.loads(request_trialordercreate.text)
 
     print("-----------打印请求数据如下：--------------")
     print(trialordercreate_url)

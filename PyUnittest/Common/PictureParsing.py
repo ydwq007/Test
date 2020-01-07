@@ -54,7 +54,7 @@ def save_picture(url,path):#参数为图片URL
 #保存base64加密图片
 def base_64(img_base64):#参数为base64加密字符串
     img_bin = base64.b64decode(img_base64)
-    with open('../TestResults/Picture/base_64.png', 'wb') as f:
+    with open('../../TestResults/Picture/base_64.png', 'wb') as f:
         f.write(img_bin)
 
 #获取验证数据
@@ -62,7 +62,7 @@ def get_verification_data(path):#参数为图片地址
 
     image = Image.open(path) # 打开验证码图片文件
     im = image.convert("L") # 基本处理，灰度处理，提升识别准确率
-    im.save("../TestResults/Picture/demo001.png")  # 保存处理后的图片
+    im.save("../../TestResults/Picture/demo001.png")  # 保存处理后的图片
     # 利用pytesseract进行图片内容识别
     text = pytesseract.image_to_string(im,lang="chi_sim") #lang="chi_sim"使用中文解析图片
     # 去除识别结果中的非数字/字母内容
@@ -124,7 +124,7 @@ if __name__ == "__main__":
 
 
     #识别图片
-    path = "../TestResults/Picture/save_picture/"
+    path = "../../TestResults/Picture/save_picture/"
     url = "https://testchome.seeyon.com/portal.php?m=util&a=randcode&type=login&w=90&h=40&base64=1"
     discern(path,url)
 

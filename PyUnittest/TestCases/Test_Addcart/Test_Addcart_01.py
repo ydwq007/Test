@@ -9,7 +9,7 @@
 
 import unittest,sys
 sys.path.append('../../TestDatas') #跨目录调用需要配置路径，测试数据路径
-from BasicDatas import usernames,password
+from BasicDatas import usernames,password,test_url_chome
 sys.path.append('.../../Interfaces') #跨目录调用需要配置路径,接口路径
 import Logins.Login as Login
 import Searchs.SearchGoods as SearchGoods
@@ -17,7 +17,7 @@ import Goods.AddCart as AddCart
 import Goods.GetCartList as GetCartList
 import Goods.CleanCart as CleanCart
 
-
+url = test_url_chome
 class Add_cart(unittest.TestCase): # 继承unittest.TestCase
 
     @classmethod
@@ -47,7 +47,7 @@ class Add_cart(unittest.TestCase): # 继承unittest.TestCase
 
         #登录
         try:
-            self.result_login = Login.login_mobile(self.user, self.passw, "") #获取接口成功或失败的标记
+            self.result_login = Login.login_mobile(url,self.user, self.passw, "") #获取接口成功或失败的标记
             self.assertEqual(True,self.result_login[0])
         finally:
             print("已调用登录接口")
@@ -139,7 +139,7 @@ class Add_cart(unittest.TestCase): # 继承unittest.TestCase
 
         #登录
         try:
-            self.result_login = Login.login_mobile(user, passw, "") #获取接口成功或失败的标记
+            self.result_login = Login.login_mobile(url,user, passw, "") #获取接口成功或失败的标记
             self.assertEqual(True,self.result_login[0])
         # except AssertionError:
         #     print("断言失败，失败原因：期望值%s  不等于实际值 True" % self.result_login[0])

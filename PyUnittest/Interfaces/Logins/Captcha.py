@@ -7,9 +7,9 @@
 描述：
 """
 
-import requests,Json_data,sys
+import requests,json,sys
 from bson import json_util
-sys.path.append('../TestDatas') #跨目录调用需要配置路径
+sys.path.append('../../TestDatas') #跨目录调用需要配置路径
 import BasicDatas
 # # logging.basicConfig(level=logging.DEBUG)
 
@@ -29,7 +29,7 @@ class Captcha():
         request_get_Captcha = requests.get(get_Captcha_url,headers=BasicDatas.headers, verify=False) #调用接口（url,参数，类型）#verify=False 跳过认证
 
         #获取响应数据
-        response_get_Captcha= Json_data.loads(request_get_Captcha.text) #son.loads()用于将字符串形式的数据转化为字典
+        response_get_Captcha= json.loads(request_get_Captcha.text) #son.loads()用于将字符串形式的数据转化为字典
 
         print("获取图像验证码地址：%s" % get_Captcha_url)
         print("获取图像验证码响应结果为：\n%s" % json_util.dumps(response_get_Captcha,ensure_ascii=False,indent=4)) #打印响应数据，以json格式输出

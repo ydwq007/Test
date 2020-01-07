@@ -6,10 +6,10 @@
 更新时间：2019-09-16
 描述：chome获取用户信息（包括用户信息，所属客户单位信息，经销商信息），需要用户登录为前提
 """
-import Json_data,requests
+import json,requests
 from bson import json_util
 import sys
-sys.path.append(r"D:\IdeaProjects\seeyon\PyUnittest\TestDatas") #跨目录调用需要配置路径
+sys.path.append("../../TestDatas") #跨目录调用需要配置路径
 import BasicDatas
 
 #获取用户信息URL
@@ -31,13 +31,13 @@ def userinfo(Authorization):
     }
 
     #将请求转换为json格式
-    datas = Json_data.dumps(data)
+    datas = json.dumps(data)
 
     #调用接口（url,参数，类型）#verify=False 跳过认证
     request_userinfo = requests.post(userinfo_url, data=datas,headers=header,verify=False)
 
     #获取响应数据
-    response_userinfo= Json_data.loads(request_userinfo.text)
+    response_userinfo= json.loads(request_userinfo.text)
 
     print("-----------打印请求数据如下：--------------")
     print(userinfo_url)
