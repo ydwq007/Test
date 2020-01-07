@@ -1,0 +1,9 @@
+pymysql==0.9.3
+pytesseract==0.3.0
+#PIL==1.1.6
+xmlrunner==1.7.7
+bson==0.5.8
+Image==1.5.27
+requests==2.22.0
+xlrd==1.2.0
+xmindparser==1.0.8
