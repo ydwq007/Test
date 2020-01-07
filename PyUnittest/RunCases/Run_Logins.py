@@ -25,7 +25,8 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
         self.result_name = "%s_接口测试报告_%s" % (self.casesname,self.run_time) #报告名称
         self.tester = "魏奇" #执行人员
         # self.test_reult = "../TestResult/TestResult_%s.html" % self.run_time1
-        self.test_reult = r"D:\IdeaProjects\interfacetest\TestResults\TestResult_%s.html" % self.run_time1
+        self.test_reult = r"D:\IdeaProjects\interfacetest\TestResults\TestResult_%s.html" % self.run_time1 #winds下路径
+        # self.test_reult = "/var/lib/jenkins/workspace/ZY/PyUnittest/TestResults/TestResult_%s.html" % self.run_time1"  # Linux下调试路径指定文件目录
         print(self.test_reult)
 
         #指定的case所在的路径里寻找所有名称模式匹配pattern的文件并加载其内容
