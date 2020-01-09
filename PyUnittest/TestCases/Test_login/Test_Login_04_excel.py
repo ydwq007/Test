@@ -19,10 +19,13 @@ class Login_cases(Plan.Plan):
         """正确用户名和正确密码登录"""
 
         try:
-            file = Excel.open_xlsx("../../TestDatas/测试用例.xlsx")
+            file = Excel.open_xlsx("../../TestDatas/接口测试用例.xlsx")
             result = Excel.run_xlsx1(file,"login_moblie","test_login_case_01","https://testchome.seeyon.com")
             # print(result)
             self.assertEqual(True, result)
+        except Exception as err:
+            # print(err)
+            raise
         finally:
             print("调用接口结束")
 
@@ -30,7 +33,7 @@ class Login_cases(Plan.Plan):
         """正确用户名和错误密码登录"""
 
         try:
-            file = Excel.open_xlsx("../../TestDatas/测试用例.xlsx")
+            file = Excel.open_xlsx("../../TestDatas/接口测试用例.xlsx")
             result = Excel.run_xlsx1(file,"login_moblie","test_login_case_02","https://testchome.seeyon.com")
             self.assertEqual(True, result)
         except Exception as err:
@@ -41,7 +44,7 @@ class Login_cases(Plan.Plan):
         """错误用户和正确密码"""
 
         try:
-            file = Excel.open_xlsx("../../TestDatas/测试用例.xlsx")
+            file = Excel.open_xlsx("../../TestDatas/接口测试用例.xlsx")
             result = Excel.run_xlsx1(file,"login_moblie","test_login_case_03","https://testchome.seeyon.com")
             self.assertEqual(True, result)
         except Exception as err:
@@ -52,7 +55,7 @@ class Login_cases(Plan.Plan):
         """停用用户"""
 
         try:
-            file = Excel.open_xlsx("../../TestDatas/测试用例.xlsx")
+            file = Excel.open_xlsx("../../TestDatas/接口测试用例.xlsx")
             result = Excel.run_xlsx1(file,"login_moblie","test_login_case_04","https://testchome.seeyon.com")
             self.assertEqual(True, result)
         except Exception as err:

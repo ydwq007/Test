@@ -98,7 +98,7 @@ if __name__ == "__main__":
     # path2 = r"..\TestDatas\客户数据表.csv"
     path1 = "../TestDatas/文本数据.txt"
     path2 = "../TestDatas/客户数据表.csv"
-    path3 = "../TestDatas/测试用例.csv"
+    path3 = "../TestDatas/接口测试用例.csv"
     re1 = FlieRead(path1)
     re2 = FlieRead(path2)
     re3 = FlieRead(path3)

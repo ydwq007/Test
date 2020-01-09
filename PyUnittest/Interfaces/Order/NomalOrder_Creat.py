@@ -84,7 +84,7 @@ if __name__ == "__main__":
         "coupon_id":"0" #优惠id，默认0无优惠
     }
 
-    Authorization = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU3MTY0MDQ3MSwic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1NzQyMzI0NzEsInVpZCI6IjE1NjI2NTAzNzUwMTkwMDAwIn0._UiD4ymJ2AY1S5N65tWA9S_e0Dh_V94VuH7EoM-QEqs"
+    Authorization = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6MTU3ODQ0NjgxMywic2NvcGVzIjoicm9sZV9hY2Nlc3MiLCJleHAiOjE1Nzg0OTAwMTMsInVpZCI6IjE1NjM0NDI1NDcwMTkwMDAwIn0.CnZCYPO_d9-Nem_vru_9wWAWfkUmVE6VjdnyQJ3AWtw"
     nomalordercreate(Authorization,data1)
 
 
