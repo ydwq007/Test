@@ -9,7 +9,7 @@ import unittest,time
 import sys
 sys.path.append("../Common") #跨目录调用需要配置路径
 import Run_cases
-sys.path.append("../../TestResults")
+sys.path.append("../TestResults")
 
 
 class RunCase(unittest.TestCase):# 继承unittest.TestCase

@@ -8,9 +8,9 @@
 """
 
 import unittest,time,sys
-sys.path.append("../../Common") #跨目录调用需要配置路径
+sys.path.append("../Common") #跨目录调用需要配置路径
 import Run_cases,File_Copy
-sys.path.append("../../TestResults")
+sys.path.append("../TestResults")
 
 
 class RunCase(unittest.TestCase):# 继承unittest.TestCase
