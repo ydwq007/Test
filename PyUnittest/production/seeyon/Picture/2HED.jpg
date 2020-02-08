@@ -1,0 +1,51 @@
+<!--
+ * @Description: 
+ * @Author: 黎志恒
+ * @Date: 2019-12-02 15:33:39
+ * @LastEditTime: 2019-12-12 11:06:03
+ * @LastEditors: 黎志恒
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <title>致远协同云-企业应用与定制一站式云服务平台，致远协同云，SEEYON Cloud，协同云，企业应用与定制云服务</title>
+    <meta name="keywords" content="致远协同云，SEEYON Cloud，seeyon cloud，协同，协同云，云服务，企业应用，企业应用与定制云服务平台，O2O一站式，CAP，CAP+，协同云产品和服务，数字化，智能化，企业转型升级，零代码，可视化，协同云体验中心，协同云表单，表单模板，工具组件，解决方案，案例中心，客户案例，定制服务，应用广场，应用产品，应用定制，业务定制，业务包，快速认证，POC测试，试用下载，免费下载，移动应用，移动办公，协同云伙伴，生态伙伴，供应商，HR管理，协同云人事管理，采购管理，费用管理，合同管理，资产管理，客户管理，行政管理，销售管理，项目管理，党建管理，招聘管理，绩效管理">
+    <meta name="description" content="致远协同云，是集专家咨询、应用体验、产品交易、业务定制于一体的综合型、赋能型、生态式的面向企业级组织提供数字化应用与定制的服务平台。咨询电话400-700-3322。">
+    <script type="text/javascript" src="/c/config/config.js?v=20190802150148"></script>
+    <script type='text/javascript'>
+        var gioToken = "9ecbcc8602c0d685";
+        ! function (e, t, n, g, i) {
+            e[i] = e[i] || function () {
+                    (e[i].q = e[i].q || []).push(arguments)
+                }, n = t.createElement("script"), tag = t.getElementsByTagName("script")[0], n.async = 1, n.src = (
+                    'https:' == document.location.protocol ? 'https://' : 'http://') + g, tag.parentNode
+                .insertBefore(n,
+                    tag)
+        }(window, document, "script", "assets.giocdn.com/2.1/gio.js", "gio");
+        gio('init', gioToken, {
+            hashtag: true
+        });
+        gio('send');
+    </script>
+    <script>
+        var hm = document.createElement("script");
+        var token = "23e0c31a6a281e90ac8549791ec6bddc";
+        if (location.host === "cloud.seeyon.com") {
+            token = "cd8f3db534fef193642dd2b26ff987a5"
+        }
+        hm.src = "https://hm.baidu.com/hm.js?" + token;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    </script>
+<link href="https://testpcmallsrc.seeyoncloud.com/c/static/css/app_1ecff3a800dd7e4caed5.css" rel="preload" as="style"><link href="https://testpcmallsrc.seeyoncloud.com/c/static/css/chunk-vendors_1ecff3a800dd7e4caed5.css" rel="preload" as="style"><link href="https://testpcmallsrc.seeyoncloud.com/c/static/js/app_1ecff3a800dd7e4caed5.js?" rel="preload" as="script"><link href="https://testpcmallsrc.seeyoncloud.com/c/static/js/chunk-vendors_1ecff3a800dd7e4caed5.js" rel="preload" as="script"><link href="https://testpcmallsrc.seeyoncloud.com/c/static/css/chunk-vendors_1ecff3a800dd7e4caed5.css" rel="stylesheet"><link href="https://testpcmallsrc.seeyoncloud.com/c/static/css/app_1ecff3a800dd7e4caed5.css" rel="stylesheet"></head>
+
+<body>
+    <div id="app"></div>
+
+<script type="text/javascript" src="https://testpcmallsrc.seeyoncloud.com/c/static/js/chunk-vendors_1ecff3a800dd7e4caed5.js"></script><script type="text/javascript" src="https://testpcmallsrc.seeyoncloud.com/c/static/js/app_1ecff3a800dd7e4caed5.js?"></script></body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
+</head>
+<body>
+    <div id="38ba01f836314736bbbb611f7168380c" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_38ba01f836314736bbbb611f7168380c = echarts.init(
+            document.getElementById('38ba01f836314736bbbb611f7168380c'), 'light', {renderer: 'canvas'});
+        var option_38ba01f836314736bbbb611f7168380c = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "gauge",
+            "title": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "detail": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{value}%"
+            },
+            "name": "\u4e1a\u52a1\u6307\u6807",
+            "min": 0,
+            "max": 100,
+            "splitNumber": 10,
+            "startAngle": 225,
+            "endAngle": -45,
+            "data": [
+                {
+                    "name": "\u5b8c\u6210\u7387",
+                    "value": 68.97
+                }
+            ]
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u4e1a\u52a1\u6307\u6807"
+            ],
+            "selected": {
+                "\u4e1a\u52a1\u6307\u6807": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "title": [
+        {
+            "text": "\u4eea\u8868\u76d8\u793a\u4f8b",
+            "subtext": "\u4eea\u8868\u76d8",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_38ba01f836314736bbbb611f7168380c.setOption(option_38ba01f836314736bbbb611f7168380c);
+    </script>
+</body>
+</html>
