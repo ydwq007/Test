@@ -42,18 +42,24 @@ def read_xlsx(sheet,host,caseno):
     return content
 
 #请求接口
-def requet_xlsx(content):
+def requet_xlsx( content):
     headers = content["Test_Headers"]
     urls = content["Test_Url"]
     request_method = content["Test_Method"]
+    contenttype = headers["Content-Type"]
     try:
         #根据不同的请求方式发出http请求
-        if request_method == ("post" or "POST"):
+        if request_method == "post" or request_method == "POST":
             #判断请求头是否有参数
             if headers:
-                datas = json.dumps(content["Test_Data"])
-                interface_request = requests.post(url=urls,data=datas,headers=headers,verify=False)
-                response = json.loads(interface_request.text) #json.loads()用于将字符串形式的数据转化为字典
+                if contenttype == "application/json":
+                    datas = json.dumps(content["Test_Data"])
+                    interface_request = requests.post(url=urls,data=datas,headers=headers,verify=False)
+                    response = json.loads(interface_request.text) #json.loads()用于将字符串形式的数据转化为字典
+                elif contenttype == "multipart/form-data":
+                    datas = content["Test_Data"]
+                    interface_request = requests.post(url=urls,files=datas,headers=headers,verify=False)
+                    response = json.loads(interface_request.text) #json.loads()用于将字符串形式的数据转化为字典
                 print("\n请求头：\n%s" % headers)
             else:
                 datas = content["Test_Data"]
@@ -62,7 +68,7 @@ def requet_xlsx(content):
             print("\n请求地址：\n%s" % urls)
             print("\n请求参数：\n%s" % datas)
             print("\n响应数据：\n%s" % response)
-        elif request_method == ("get" or "GET"):
+        elif request_method == "get" or request_method == "GET":
             #判断请求头是否有参数
             if headers:
                 datas = json.dumps(content["Test_Data"])
@@ -101,6 +107,7 @@ def run_xlsx1(original_file,sheet_name,row_name,host): #参数：文件，表名
     original_sheet = original_file.sheet_by_name(sheet_name) #通过名称获取
     content = read_xlsx(original_sheet,host,row_name) # 获取用例并且参数化
     result = requet_xlsx(content) # 请求接口
+    # print(result)
 
     # 获取实际响应码，并且转换为int类型
     if isinstance(result["code"],int):
@@ -128,16 +135,16 @@ def run_xlsx1(original_file,sheet_name,row_name,host): #参数：文件，表名
             check = Json_data.json_check(result,key,Except[key]) #key和value校对
             # print(check)
             if check == True:
-                print("第%s检查点，检查成功。key为%s，实际值为%s" % (count,key,Except[key]))
+                print("第%s检查点，检查成功。key为%s，期望值为%s" % (count,key,Except[key]))
                 sign.append(True)
             else:
-                print("第%s检查点，检查失败。key为%s，实际值为%s" % (count,key,Except[key]))
+                print("第%s检查点，检查失败。key为%s，期望值为%s" % (count,key,Except[key]))
                 sign.append(False)
             count += 1
         if sign and False not in sign:
-             return True
+             return True,result
         else:
-            return False
+            return False,result
             # # 判断期望值
         #     print(Except.keys())
         #     for key in Except.keys():
@@ -154,7 +161,7 @@ def run_xlsx1(original_file,sheet_name,row_name,host): #参数：文件，表名
         #         return False
     else:
         print("\n未进入检查点")
-        return False
+        return False,result
 
 
 if __name__ == "__main__":

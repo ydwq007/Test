@@ -19,11 +19,9 @@ import BasicDatas
 #基本参数：
 #登录接口地址
 # login_url = "%s/portal.php" % BasicDatas.test_url_chome
-#选择登录方式
-Login_mode = 1 #1代表密码登录，否则代表验证码登录
 
 #封装登录接口
-def login_mobile(host,username,password,mobile=""):
+def login_mobile(host,username,password,mobile="",Login_mode = 1):
 
     #设置接口参数
     if Login_mode == 1:

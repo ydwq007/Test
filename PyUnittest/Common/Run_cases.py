@@ -53,7 +53,7 @@ class Run_Case(object):
         #html格式
         else:
             with open(self.test_result, "wb") as result_html: #测试报告路径
-                runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=self.result_name,description="案例具体测试情况，请阅读附件",
+                runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=self.result_name,description="用例具体测试情况，请阅读附件",
                                                                verbosity=2) #retry=2,save_last_try=False
                 runner_results.run(suite) #执行案例
 

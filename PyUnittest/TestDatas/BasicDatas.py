@@ -28,6 +28,12 @@ test_mall = "https://testcloud.seeyon.com"
 test_chome = "https://testchome.seeyon.com"
 test_manager = "https://testcmanager.seeyon.com"
 
+#接口测试
+citest_mall = "https://citestcloud.seeyon.com"
+citest_chome = "https://citestchome.seeyon.com"
+citest_manager = "https://citestcmanager.seeyon.com"
+
+
 #测试地址
 test_url_mall = test_mall
 test_url_chome = test_chome

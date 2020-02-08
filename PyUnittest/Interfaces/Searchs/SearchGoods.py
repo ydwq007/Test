@@ -57,7 +57,7 @@ def goods_search(keywords):
             return True,goods_id
         else:
             print("%s：商品信息为空！！！" % keywords )
-            return True
+            return True,keywords
     else:
         message = response_search["message"]
         print("关键字%s：商品搜索失败！！！原因为：%s" % (keywords,message))

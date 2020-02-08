@@ -8,7 +8,7 @@
 """
 import unittest,sys
 sys.path.append('../../TestDatas') #跨目录调用需要配置路径，测试数据路径
-from BasicDatas import usernames,password,test_url_chome
+from config import usernames,password,test_url_chome
 sys.path.append("../../Common") #跨目录调用需要配置路径,接口路径
 import Plan
 sys.path.append('../../Interfaces') #跨目录调用需要配置路径,接口路径

@@ -13,11 +13,11 @@ import Logins.Login as Login
 sys.path.append("../../Common") #跨目录调用需要配置路径,接口路径
 import DataBases, smoke,Plan
 sys.path.append('../../TestDatas') #跨目录调用需要配置路径
-import BasicDatas
+import config
 from config import test_usercenter_db
 
 parm = smoke.Smoke(False).smoke()
-url = BasicDatas.test_url_chome
+url = config.test_url_chome
 
 class Login_cases(Plan.Plan):
 

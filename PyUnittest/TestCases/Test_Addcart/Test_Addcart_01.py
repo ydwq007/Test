@@ -9,7 +9,7 @@
 
 import unittest,sys
 sys.path.append('../../TestDatas') #跨目录调用需要配置路径，测试数据路径
-from BasicDatas import usernames,password,test_url_chome
+from config import usernames,password,test_url_chome
 sys.path.append('.../../Interfaces') #跨目录调用需要配置路径,接口路径
 import Logins.Login as Login
 import Searchs.SearchGoods as SearchGoods
@@ -51,6 +51,13 @@ class Add_cart(unittest.TestCase): # 继承unittest.TestCase
             self.assertEqual(True,self.result_login[0])
         finally:
             print("已调用登录接口")
+
+        #查询商品
+        try:
+            self.result_search = SearchGoods.goods_search(self.goods) #获取接口成功或失败的标记
+            self.assertEqual(True, self.result_search[0])
+        finally:
+            print("已调用搜索商品接口")
 
         #商品加入购物车，保证购物车有数据
         try:

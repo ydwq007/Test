@@ -8,7 +8,7 @@
 import unittest
 import sys
 sys.path.append('../../TestDatas') #跨目录调用需要配置路径，测试数据路径
-from BasicDatas import parameter_login
+from config import parameter_login
 
 sys.path.append('../../Interfaces') #跨目录调用需要配置路径,接口路径
 import Logins.Login as Login

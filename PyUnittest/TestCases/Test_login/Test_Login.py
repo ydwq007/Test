@@ -13,11 +13,11 @@ import Logins.Login as Login
 sys.path.append("../../Common") #跨目录调用需要配置路径,接口路径
 import smoke,Plan
 sys.path.append('../../TestDatas') #跨目录调用需要配置路径
-import BasicDatas
+import config
 from config import test_usercenter_db
 
 parm = smoke.Smoke(False).smoke()
-url = BasicDatas.test_url_chome
+url = config.test_url_chome
 
 class Login_cases(Plan.Plan):
 
@@ -30,7 +30,7 @@ class Login_cases(Plan.Plan):
         expected_value = True
         #调用接口
         try:
-            result = Login.login_mobile(url,BasicDatas.usernames[0], password)
+            result = Login.login_mobile(url,config.usernames[0], password)
             print(result)
             compare = self.assertEqual(expected_value, result[0])
             print(compare)
