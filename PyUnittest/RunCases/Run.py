@@ -24,7 +24,7 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
         self.run_time1 = time.strftime("%Y%m%d_%H%M%S", time.localtime())
         self.result_name = "%s_接口测试报告_%s" % ("全用例执行",self.run_time) #报告名称
         self.tester = "魏奇" #执行人员
-        self.test_result = "../../TestResults/TestResult_%s.html" % self.run_time1
+        self.test_result = r"../../TestResults/TestResult_%s.html" % self.run_time1
         # self.test_reult = "/var/lib/jenkins/workspace/ZY/PyUnittest/TestResults/TestResult_%s.html" % self.run_time1"  # Linux下调试路径指定文件目录
 
         # 初始化参数

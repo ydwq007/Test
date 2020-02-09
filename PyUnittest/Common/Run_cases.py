@@ -32,8 +32,8 @@ class Run_Case(object):
         all_cases = unittest.defaultTestLoader.discover(case_path,pattern="%s*.py" % self.casename) #指定案例脚本
 
         for test_case in all_cases:
-            for case in test_case:
-                suite.addTests(case)#把所有的测试用例添加进来
+            # for case in test_case:
+                suite.addTests(test_case)#把所有的测试用例添加进来
 
         return suite
 
