@@ -46,12 +46,13 @@ def requet_xlsx( content):
     headers = content["Test_Headers"]
     urls = content["Test_Url"]
     request_method = content["Test_Method"]
-    contenttype = headers["Content-Type"]
+
     try:
         #根据不同的请求方式发出http请求
         if request_method == "post" or request_method == "POST":
             #判断请求头是否有参数
             if headers:
+                contenttype = headers["Content-Type"]
                 if contenttype == "application/json":
                     datas = json.dumps(content["Test_Data"])
                     interface_request = requests.post(url=urls,data=datas,headers=headers,verify=False)
