@@ -24,13 +24,13 @@ class Run_Case(object):
         self.result_name = "%s_接口测试报告_%s" % (result_name,self.run_time) #报告名称
         self.style = style
 
-        path = "../../TestResults"
-        isExists=os.path.exists(path)
-        if not isExists:
-            os.makedirs(path)
-            print("目录创建成功")
-        else:
-            print("目录已存在")
+        # path = "../../TestResults"
+        # isExists=os.path.exists(path)
+        # if not isExists:
+        #     os.makedirs(path)
+        #     print("目录创建成功")
+        # else:
+        #     print("目录已存在")
 
     # 创建测试套件
     def creat_suit(self):
