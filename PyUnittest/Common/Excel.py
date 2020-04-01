@@ -46,8 +46,9 @@ def requet_xlsx( content):
     headers = content["Test_Headers"]
     urls = content["Test_Url"]
     request_method = content["Test_Method"]
-
     try:
+        print("\n请求地址：\n%s" % urls)
+        print("\n请求头：\n%s" % headers)
         #根据不同的请求方式发出http请求
         if request_method == "post" or request_method == "POST":
             #判断请求头是否有参数
@@ -55,33 +56,32 @@ def requet_xlsx( content):
                 contenttype = headers["Content-Type"]
                 if contenttype == "application/json":
                     datas = json.dumps(content["Test_Data"])
+                    print("\n请求参数：\n%s" % datas.encode('utf-8').decode('unicode_escape'))
                     interface_request = requests.post(url=urls,data=datas,headers=headers,verify=False)
                     response = json.loads(interface_request.text) #json.loads()用于将字符串形式的数据转化为字典
                 elif contenttype == "multipart/form-data":
                     datas = content["Test_Data"]
+                    print("\n请求参数：\n%s" % datas.encode('utf-8').decode('unicode_escape'))
                     interface_request = requests.post(url=urls,files=datas,headers=headers,verify=False)
                     response = json.loads(interface_request.text) #json.loads()用于将字符串形式的数据转化为字典
-                print("\n请求头：\n%s" % headers)
             else:
                 datas = content["Test_Data"]
                 interface_request = requests.post(url=urls,data=datas,verify=False)
                 response = json.loads(interface_request.text) #json.loads()用于将字符串形式的数据转化为字典
-            print("\n请求地址：\n%s" % urls)
-            print("\n请求参数：\n%s" % datas)
             print("\n响应数据：\n%s" % response)
         elif request_method == "get" or request_method == "GET":
             #判断请求头是否有参数
             if headers:
                 datas = json.dumps(content["Test_Data"])
+                print("\n请求参数：\n%s" % datas.encode('utf-8').decode('unicode_escape'))
                 interface_request = requests.get(url=urls,data=datas,headers=headers,verify=False)
                 response = json.loads(interface_request.text) #json.loads()用于将字符串形式的数据转化为字典
                 print("\n请求头：\n%s" % headers)
             else:
                 datas = content["Test_Data"]
+                print("\n请求参数：\n%s" % datas.encode('utf-8').decode('unicode_escape'))
                 interface_request = requests.post(url=urls,data=datas,verify=False)
                 response = json.loads(interface_request.text) #json.loads()用于将字符串形式的数据转化为字典
-            print("\n请求地址：\n%s" % urls)
-            print("\n请求参数：\n%s" % datas)
             print("\n响应数据：\n%s" % response)
         else:
             print("\n请求方式未定义：%s" % content["Test_Method"])

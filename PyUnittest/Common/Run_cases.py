@@ -15,12 +15,22 @@ from SendEmail import sendemail
 class Run_Case(object):
 
     # 初始化参数
-    def __init__(self,path,casename,test_reult,result_name,style=3):
+    def __init__(self,path,casename,result_name,style=3):
+        self.run_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        self.result_time = time.strftime("%Y%m%d_%H%M%S", time.localtime())
         self.path = path
         self.casename = casename
-        self.test_result = test_reult
-        self.result_name = result_name
+        self.test_result = r"../../TestResults/TestResult_%s.html" % self.result_time
+        self.result_name = "%s_接口测试报告_%s" % (result_name,self.run_time) #报告名称
         self.style = style
+
+        path = "../../TestResults"
+        isExists=os.path.exists(path)
+        if not isExists:
+            os.makedirs(path)
+            print("目录创建成功")
+        else:
+            print("目录已存在")
 
     # 创建测试套件
     def creat_suit(self):
@@ -43,12 +53,12 @@ class Run_Case(object):
 
         #txt格式
         if self.style == 1:
-            with open("../../TestResults/TestResult.txt", "w", encoding="utf-8") as result_txt: #测试报告路径
+            with open("../TestResults/TestResult.txt", "w", encoding="utf-8") as result_txt: #测试报告路径
                 runner_results = unittest.TextTestRunner(stream=result_txt,descriptions=result_txt,verbosity=2) # verbosity执行结果的详细程度，0<1<2，默认1
                 runner_results.run(suite) #执行案例
         #xml格式
         elif self.style == 2:
-            runner_results = xmlrunner.XMLTestRunner(output='../../TestResults')#指定报告放的目录
+            runner_results = xmlrunner.XMLTestRunner(output='../TestResults')#指定报告放的目录
             runner_results.run(suite) #执行案例
         #html格式
         else:
