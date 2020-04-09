@@ -20,7 +20,7 @@ class Run_Case(object):
         self.result_time = time.strftime("%Y%m%d_%H%M%S", time.localtime())
         self.path = path
         self.casename = casename
-        self.test_result = "../TestResults/TestResult_%s.html" % self.result_time
+        self.test_result = "../../TestResults/TestResult_%s.html" % self.result_time
         self.result_name = "%s_接口测试报告_%s" % (result_name,self.run_time) #报告名称
         self.style = style
 
