@@ -71,13 +71,9 @@ class Run_Case(object):
                                                                verbosity=2) #retry=2,save_last_try=False
                 runner_results.run(suite) #执行案例
 
-
         #发送测试报告
         time.sleep(3)
         sendemail()
-
-
-
 
 if __name__ == "__main__":
     unittest.main()
