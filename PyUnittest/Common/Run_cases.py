@@ -34,8 +34,8 @@ class Run_Case(object):
             print("%s目录创建成功" % self.result_path)
         else:
             print("%s目录已存在" % self.result_path)
-        #
-        # open(self.test_result,"r")
+
+        open(self.test_result,"wb")
 
 
     # 创建测试套件
