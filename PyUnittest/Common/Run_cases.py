@@ -76,3 +76,6 @@ class Run_Case(object):
         time.sleep(3)
         sendemail()
 
+if __name__ == "__main__":
+    unittest.main()
+
