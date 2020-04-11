@@ -20,7 +20,7 @@ class Run_Case(object):
         self.result_time = time.strftime("%Y%m%d_%H%M%S", time.localtime())
         self.path = path
         self.casename = casename
-        self.test_result = "../TestResults/TestResult_%s.html" % self.result_time
+        self.test_result = "../../TestResults/TestResult_%s.html" % self.result_time
         # self.test_result1 = "TestResult_%s.html" % self.result_time
         # self.test_result = r"D:\IdeaProjects\Seeyon\PyUnittest\TestResults\TestResult_%s.html" % self.result_time
         # self.test_result = "/var/lib/jenkins/workspace/ZY/PyUnittest/TestResults/TestResult_%s.html" % self.result_time
