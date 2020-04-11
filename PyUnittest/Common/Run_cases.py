@@ -21,18 +21,19 @@ class Run_Case(object):
         self.path = path
         self.casename = casename
         self.test_result = "../../TestResults/TestResult_%s.html" % self.result_time
+        self.test_result1 = "TestResult_%s.html" % self.result_time
         # self.test_result = r"D:\IdeaProjects\Seeyon\PyUnittest\TestResults\TestResult_%s.html" % self.result_time
         # self.test_result = "/var/lib/jenkins/workspace/ZY/PyUnittest/TestResults/TestResult_%s.html" % self.result_time
         self.result_name = "%s_接口测试报告_%s" % (result_name,self.run_time) #报告名称
         self.style = style
 
-        # path = "../../TestResults"
-        # isExists=os.path.exists(path)
-        # if not isExists:
-        #     os.makedirs(path)
-        #     print("目录创建成功")
-        # else:
-        #     print("目录已存在")
+        self.result_path = "../TestResults"
+        isExists=os.path.exists(self.result_path)
+        if not isExists:
+            os.makedirs(self.result_path)
+            print("%s目录创建成功" % self.result_path)
+        else:
+            print("%s目录已存在" % self.result_path)
 
     # 创建测试套件
     def creat_suit(self):
@@ -45,7 +46,7 @@ class Run_Case(object):
 
         for test_case in all_cases:
             # for case in test_case:
-                suite.addTests(test_case)#把所有的测试用例添加进来
+            suite.addTests(test_case)#把所有的测试用例添加进来
 
         return suite
 
@@ -64,6 +65,8 @@ class Run_Case(object):
             runner_results.run(suite) #执行案例
         #html格式
         else:
+            # os.chdir("../../TestResults")
+            # with open(self.test_result1, "wb") as result_html: #测试报告路径
             with open(self.test_result, "wb") as result_html: #测试报告路径
                 runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=self.result_name,description="用例具体测试情况，请阅读附件",
                                                                verbosity=2) #retry=2,save_last_try=False
