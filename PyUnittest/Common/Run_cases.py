@@ -36,6 +36,7 @@ class Run_Case(object):
             print("%s目录已存在" % self.result_path)
 
         open(self.test_result,"wb")
+        print("文件创建成功")
 
 
     # 创建测试套件
