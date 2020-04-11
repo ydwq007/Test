@@ -88,8 +88,8 @@ def sendfile(parm=2):
         return new_file
     else:
         #发送最新文件
-        dir = "../../TestResults"  # wind下调试路径，指定文件目录
-        # dir = "/var/lib/jenkins/workspace/ZY/PyUnittest/TestResults/"  # Linux下调试路径指定文件目录
+        # dir = "../../TestResults"  # wind下调试路径，指定文件目录
+        dir = "/var/lib/jenkins/workspace/ZY/PyUnittest/TestResults/"  # Linux下调试路径指定文件目录
         # dir = "../TestResults"  # Linux下调试路径指定文件目录
         new_file = find_new_file(dir)  # 查找最新的html文件
         return new_file
