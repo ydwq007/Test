@@ -34,6 +34,9 @@ class Run_Case(object):
             print("%s目录创建成功" % self.result_path)
         else:
             print("%s目录已存在" % self.result_path)
+        #
+        # open(self.test_result,"r")
+
 
     # 创建测试套件
     def creat_suit(self):
@@ -48,43 +51,33 @@ class Run_Case(object):
             # for case in test_case:
             suite.addTests(test_case)#把所有的测试用例添加进来
 
-        # return suite
-        with open(self.test_result, "wb") as result_html: #测试报告路径
-            runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=self.result_name,description="用例具体测试情况，请阅读附件",
-                                                           verbosity=2) #retry=2,save_last_try=False
+        return suite
+
+    # 执行并且输出测试报告
+    def run_suit(self,suite):
+
+        #txt格式
+        if self.style == 1:
+            with open("../TestResults/TestResult.txt", "w", encoding="utf-8") as result_txt: #测试报告路径
+                runner_results = unittest.TextTestRunner(stream=result_txt,descriptions=result_txt,verbosity=2) # verbosity执行结果的详细程度，0<1<2，默认1
+                runner_results.run(suite) #执行案例
+        #xml格式
+        elif self.style == 2:
+            runner_results = xmlrunner.XMLTestRunner(output='../TestResults')#指定报告放的目录
             runner_results.run(suite) #执行案例
+        #html格式
+        else:
+            # os.chdir("../../TestResults")
+            # with open(self.test_result1, "wb") as result_html: #测试报告路径
+            with open(self.test_result, "wb+") as result_html: #测试报告路径
+                runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=self.result_name,description="用例具体测试情况，请阅读附件",
+                                                               verbosity=2) #retry=2,save_last_try=False
+                runner_results.run(suite) #执行案例
 
 
         #发送测试报告
         time.sleep(3)
         sendemail()
-
-
-    # 执行并且输出测试报告
-    # def run_suit(self,suite):
-    #
-    #     #txt格式
-    #     if self.style == 1:
-    #         with open("../TestResults/TestResult.txt", "w", encoding="utf-8") as result_txt: #测试报告路径
-    #             runner_results = unittest.TextTestRunner(stream=result_txt,descriptions=result_txt,verbosity=2) # verbosity执行结果的详细程度，0<1<2，默认1
-    #             runner_results.run(suite) #执行案例
-    #     #xml格式
-    #     elif self.style == 2:
-    #         runner_results = xmlrunner.XMLTestRunner(output='../TestResults')#指定报告放的目录
-    #         runner_results.run(suite) #执行案例
-    #     #html格式
-    #     else:
-    #         # os.chdir("../../TestResults")
-    #         # with open(self.test_result1, "wb") as result_html: #测试报告路径
-    #         with open(self.test_result, "wb") as result_html: #测试报告路径
-    #             runner_results = HTMLTestRunner.HTMLTestRunner(stream=result_html,title=self.result_name,description="用例具体测试情况，请阅读附件",
-    #                                                            verbosity=2) #retry=2,save_last_try=False
-    #             runner_results.run(suite) #执行案例
-    #
-    #
-    #     #发送测试报告
-    #     time.sleep(3)
-    #     sendemail()
 
 
 
