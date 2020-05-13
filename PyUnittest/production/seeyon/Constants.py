@@ -20,4 +20,4 @@ CASE_CODE = 7    # 用例code
 SQL_ROW = 0      # 预执行SQL的行号
 SQL_COL = 1      # 预执行SQL的列号
 
-FILE_NAME = "../TestDatas/接口测试用例.xlsx"
+FILE_NAME = "../TestDatas/接口测试用例-魏奇.xlsx"

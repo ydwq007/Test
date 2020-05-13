@@ -17,7 +17,7 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
 
     def test_case(self):
         #参数配置
-        self.casespath = "../TestCases/Copy/" #执行前需检验路径和文件
+        self.casespath = "../RunCases/Copy/" #执行前需检验路径和文件
         self.casesname = "Test_" #执行文件
         self.result_name = "全用例执行" #报告名称
 
@@ -30,7 +30,7 @@ class RunCase(unittest.TestCase):# 继承unittest.TestCase
 
 if __name__=="__main__":
     oldpath = "../TestCases"
-    newpath = "../TestCases/Copy/"
+    newpath = "../RunCases/Copy/"
     File_Copy.Filedel(newpath)
     File_Copy.CreateFolder(newpath)
     File_Copy.FileCopy(oldpath,newpath)

@@ -1,13 +1,12 @@
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
 """
 接口：测试报告样式
 创建人：魏奇
 更新人：魏奇
-更新时间：2019-10-21 14:05
-描述：
+更新时间：2020-01-06 13:55
+描述：去掉报告里的截图部分
 """
 
-#-*- coding: utf-8 -*-
 """
 A TestRunner for use with the Python unit testing framework. It
 generates a HTML report to show the result at a glance.
@@ -646,7 +645,7 @@ tr[id^=st]  td { background-color: #6f6f6fa1 !important ; }
     <th>失败</th>
     <th>错误</th>
     <th>详情</th>
-    <th>错误截图</th>
+    <!--<th>错误截图</th>-->
 </tr>
 %(test_list)s
 <tr id='total_row'>
@@ -656,7 +655,7 @@ tr[id^=st]  td { background-color: #6f6f6fa1 !important ; }
     <th>%(fail)s</th>
     <th>%(error)s</th>
     <th>&nbsp;</th>
-    <th>&nbsp;</th>
+    <!--<th>&nbsp;</th>-->
 </tr>
 </table>
 <script>
@@ -674,7 +673,7 @@ tr[id^=st]  td { background-color: #6f6f6fa1 !important ; }
     <td>%(fail)s</td>
     <td>%(error)s</td>
     <td><a href="javascript:showClassDetail('%(cid)s',%(count)s)">查看</a></td>
-    <td>&nbsp;</td>
+    <!--<td>&nbsp;</td>-->
 </tr>
 """  # variables: (style, desc, count, Pass, fail, error, cid)
 
@@ -697,7 +696,7 @@ tr[id^=st]  td { background-color: #6f6f6fa1 !important ; }
     </div>
     <!--css div popup end-->
     </td>
-    <td>%(img)s</td>
+    <!--<td>%(img)s</td>-->
 </tr>
 """  # variables: (tid, Class, style, desc, status,img)
 
@@ -722,6 +721,8 @@ tr[id^=st]  td { background-color: #6f6f6fa1 !important ; }
         <div class="imgyuan"></div>
     </div>
     """
+
+
     # ------------------------------------------------------------------------
     # ENDING
     #

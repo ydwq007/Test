@@ -8,7 +8,7 @@
 """
 
 import unittest,os,xmlrunner,time,sys
-import HTMLTestRunner_Chart as HTMLTestRunner
+import HTMLTestRunner as HTMLTestRunner
 sys.path.append("../Common") #跨目录调用需要配置路径
 from SendEmail import sendemail
 

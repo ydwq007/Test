@@ -159,5 +159,5 @@ def run_xlsx1(original_file,sheet_name,row_name,host): #参数：文件，表名
 
 
 if __name__ == "__main__":
-    file = open_xlsx("../TestDatas/接口测试用例.xlsx")
+    file = open_xlsx("../TestDatas/接口测试用例-魏奇.xlsx")
     result = run_xlsx1(file,"login_moblie","login_case_02","https://testchome.seeyon.com")

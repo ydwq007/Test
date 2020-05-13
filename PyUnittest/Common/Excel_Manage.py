@@ -113,7 +113,7 @@ class excelprocess_xl():
         new_workbook.save(path)  # 保存工作簿
 
         # print("\n内容修改成功。文件名为:%s，表名为:%s，修改位置为：%s行%s列" % (path,sheetname,row,col))
-        excelprocess_xl.read_excel_xls("",path,sheet_name)
+        # excelprocess_xl.read_excel_xls("",path,sheet_name)
 
 
 # 使用openpyxl函数，最大行数达到1048576
@@ -179,6 +179,28 @@ class excelprocess_op():
         saveExcel = filename
         outwb.save(saveExcel)  # 一定要记得保存
 
+# 获取数据所在的位置
+import pandas as pd
+class Excel_DataPosition():
+    def excel_dataposition(self,filepath,sheetname,value): # 传的值最好是具有唯一性
+
+        # 打开并读取文件内容
+        data = pd.read_excel(filepath,sheet_name=sheetname,header=0)
+        # 打印数据
+        # print("获取到所有的值:\n{0}".format(data))
+
+        # 匹配内容
+        for index in data.index:
+            actual_value = data.loc[index].values
+            for i in range(len(actual_value)):
+                if actual_value[i] == value:
+                    get_line = index + 2
+                    get_column = i + 1
+                    print("查找值%s在%s文件的%s表的第%s行第%s列" % (value,filepath,sheetname,index+2,i+1))
+
+        return get_line,get_column
+
+
 if __name__ == "__main__":
 
     value1 = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaG9tZSIsImlhdCI6M" \
@@ -215,3 +237,10 @@ if __name__ == "__main__":
     # excel_xl.write_excel_xls_append(book_name_xls, value3)
     # excel_xl.write_excel_xls_append(book_name_xls,value4,sheet_name_xls)
     excel_xl.write_excel_xls_modify(book_name_xls1,6,4,mdvalue,sheet_name=sheet_name_xls,style=style1)
+
+
+    filepath = "../../Experiment/Other/接口测试用例-魏奇.xlsx"
+    sheetname = "login_moblie"
+    value = "test_login_case_01"
+    position = Excel_DataPosition()
+    position.excel_dataposition(filepath,sheetname,value)

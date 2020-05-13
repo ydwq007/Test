@@ -6,9 +6,10 @@
 更新时间：2019-07-11
 """
 
+import time,os,sys
 import smtplib
-import os.path as pth
-import time,os
+sys.path.append("../TestDatas") #跨目录调用需要配置路径
+from config import email_adress as email_adress
 from email.mime.text import MIMEText #发送字符串的邮件
 from email.header import Header
 from email.mime.multipart import MIMEMultipart #处理多种形态的邮件主体，包括发送附件
@@ -96,33 +97,37 @@ def sendfile(parm=2):
 
 
 #发送邮件
-def sendemail(send_content=2):
-    #邮件接收地址
-    adresses = ["weiqi@seeyon.com","775636762@qq.com"]
+def sendemail(send_content=2,issend=1):
 
-    #服务器参数
-    config = {
-        "from": "775636762@qq.com", #服务器邮箱地址
-        "from_name": "Python接口自动化测试框架:", #邮件主题
-        "to": adresses, #邮件接收地址
-        "serverip": "smtp.qq.com", #邮件服务器
-        "serverport": "465", #邮件服务器端口
-        "username": "775636762@qq.com", #服务器邮箱用户名
-        "password": "dgtsiwieszmbbfbe"  # 服务器邮箱密码，使用QQ邮箱的SMTP授权码
-    }
-    #邮件标题
-    title = "Python接口自动化测试报告  %s" % time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-    with open(sendfile(), "rb") as files:#读取二进制
-        mail_body = files.read()
+    if issend==1:
+        #邮件接收地址
+        adresses = email_adress
 
-    if send_content == 1: #1表示字符串邮件，其他表示附件邮件
-        #调用字符串邮箱配置
-        email_string(mail_body,title,config["from_name"],config["from"],config["to"],config["serverport"],config["serverip"],
-                     config["username"],config["password"])
+        #服务器参数
+        config = {
+            "from": "775636762@qq.com", #服务器邮箱地址
+            "from_name": "Python接口自动化测试框架:", #邮件主题
+            "to": adresses, #邮件接收地址
+            "serverip": "smtp.qq.com", #邮件服务器
+            "serverport": "465", #邮件服务器端口
+            "username": "775636762@qq.com", #服务器邮箱用户名
+            "password": "dgtsiwieszmbbfbe"  # 服务器邮箱密码，使用QQ邮箱的SMTP授权码
+        }
+        #邮件标题
+        title = "Python接口自动化测试报告  %s" % time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        with open(sendfile(), "rb") as files:#读取二进制
+            mail_body = files.read()
+
+        if send_content == 1: #1表示字符串邮件，其他表示附件邮件
+            #调用字符串邮箱配置
+            email_string(mail_body,title,config["from_name"],config["from"],config["to"],config["serverport"],config["serverip"],
+                         config["username"],config["password"])
+        else:
+            #调用附件邮箱配置
+            email_appendix(mail_body,title,config["from_name"],config["from"],config["to"],config["serverport"],config["serverip"],
+                           config["username"], config["password"])
     else:
-        #调用附件邮箱配置
-        email_appendix(mail_body,title,config["from_name"],config["from"],config["to"],config["serverport"],config["serverip"],
-                       config["username"], config["password"])
+        print("\n不发生邮件")
 
 if __name__ == "__main__":
     sendemail() #参数1表示字符串邮件，2表示发送附件邮件，默认2

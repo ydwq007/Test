@@ -33,167 +33,66 @@ test_usercenter_db = {
     "dbname":"usercenter"
 }
 
-#类生产
 
 #测试环境配置
-#类生产
-vprod_mall = "https://vprodcloud.seeyon.com"
-vprod_chome = "https://vprodchome.seeyon.com"
-vprod_manager = "https://vprodcmanager.seeyon.com"
-
-#测试
+#测试环境
 test_mall = "https://testcloud.seeyon.com"
 test_chome = "https://testchome.seeyon.com"
 test_manager = "https://testcmanager.seeyon.com"
+test_file = "https://testfilestorage.seeyon.com/"
 
-#接口测试
-citest_mall = "https://citestcloud.seeyon.com"
-citest_chome = "https://citestchome.seeyon.com"
-citest_manager = "https://citestcmanager.seeyon.com"
+#CI环境
+citest_mall = "https://citestcloud.seeyoncloud.com"
+citest_chome = "https://citestchome.seeyoncloud.com"
+citest_manager = "https://citestcmanager.seeyoncloud.com"
+citest_file = "https://testfilestorage.seeyon.com/"
 
-#测试地址
-test_url_mall = test_mall
-test_url_chome = test_chome
-test_url_manager = test_manager
+# 邮件接收地址
+email_adress_CI = ["weiqi@seeyon.com","775636762@qq.com","596123007@qq.com","664785288@qq.com","judy_ning@163.com"] # CITEST环境
+email_adress_TEST = ["weiqi@seeyon.com","775636762@qq.com"] # 调试用
 
-#信息头
-#信息头
-pc_headers = {
-    "Content-Type": "application/json",
-    "Connection":"keep-alive",
-    "Cookie": "",
-}
-mobile_headers = {
-    "Content-Type": "application/json",
-    "Connection":"keep-alive",
-    "Cookie": "",
-    "Authorization":""
-}
+# 默认信息头
 headers = {
     "Content-Type": "application/json",
     "Connection":"keep-alive"
 }
 
-#正常登陆的用户账号数据
-usernames = ["gold002","15982280117"] #正确账号
-password = "123456" #默认密码为123456
-mobile = "13111111114"
-
-# 纯A类账号登录参数
-aloneA = {
-    "m": "LoginCloud",
-    "a": "login",
-    "account_type": 1,
-    "username": "15982280117",
-    "password": "123456"
-}
-# 经销商账号登录
-dealer = {
-        "m": "LoginCloud",
-        "a": "login",
-        "account_type": 2,
-        "username": "happy01",
-        "password": "123456"
-}
-
-dealer1 = {
-    "m": "LoginCloud",
-    "a": "login",
-    "account_type": 2,
-    "username": "gold002",
-    "password": "123456"
-}
-
-# 无证书账号
-dealer2 = {
-    "m": "LoginCloud",
-    "a": "login",
-    "account_type": 2,
-    "username": "happy02",
-    "password": "123456"
-}
-
-# 证书异常账号
-dealer3 = {
-    "m": "LoginCloud",
-    "a": "login",
-    "account_type": 2,
-    "username": "happy03",
-    "password": "123456"
-}
-
-# 未绑定加密狗
-dealer4 = {
-    "m": "LoginCloud",
-    "a": "login",
-    "account_type": 2,
-    "username": "happy04",
-    "password": "123456"
-}
-
-# 通狗下单
-dealer5 = {
-    "m": "LoginCloud",
-    "a": "login",
-    "account_type": 2,
-    "username": "happy05",
-    "password": "123456"
-}
-
-# 无经销商单位
-dealer6 = {
-    "m": "LoginCloud",
-    "a": "login",
-    "account_type": 2,
-    "username": "happy06",
-    "password": "123456"
-}
-
-# 试用狗下单
-dealer7 = {
-    "m": "LoginCloud",
-    "a": "login",
-    "account_type": 2,
-    "username": "happy07",
-    "password": "123456"
-}
-
-# 用户中心登录
-
-# 创建普通订单
-normal_order = {
-        "user_id": "15792269950270000",
-        "goods_sku_list": "3094:1",
-        "buyer_org_id": "4821377249100515603",
-        "service_org_id": "-7422902346933186598",
-        "company_name": "有证书有经销商",
-        "contact_name": "user904698",
-        "contact_phone": "15982280117",
-        "order_tag": "",
-        "coupon_id": "",
-        "memo": "接口测试数据"
-}
-
-# 创建0元订单
-zero_order = {
-    "user_id": "15792269950270000",
-    "goods_sku_list": "3039:1",
-    "buyer_org_id": "4821377249100515603",
-    "service_org_id": "-7422902346933186598",
-    "company_name": "有证书有经销商",
-    "contact_name": "user904698",
-    "contact_phone": "15982280117",
-    "order_tag": "",
-    "coupon_id": "",
-    "memo": "接口测试数据"
-}
+# 用例文件
+filepath_test_wq = "../../TestDatas/接口测试用例-魏奇.xlsx"
+filepath_test_zz = "../../TestDatas/接口测试用例-曾卓.xlsx"
+filepath_test_yyk = "../../TestDatas/接口测试用例-杨玉凯.xlsx"
+filepath_test_ny = "../../TestDatas/接口测试用例-甯瑛.xlsx"
+filepath_test_all = "../../TestDatas/接口测试用例_TESTALL.xlsx"
+filepath_ci_wq = "../../TestDatas/接口测试用例-魏奇-CI.xlsx"
+filepath_ci_all = "../../TestDatas/接口测试用例_CIALL.xlsx"
 
 
-#登录接口测试数据
-#参数用列表保存，第一个值为案例的内容，第三
-parameter_login = [["用户名密码均正确的情况","gold002","123456",True],["密码错误的情况","gold002","1234561",False],["密码为空的情况","gold002","",False],
-                   ["用户名为空的情况","","123456",False],["用户名错误的情况","gold101","123456",False]]
 
-# 测试用例
-# filepath = "../../TestDatas/接口测试用例.xlsx"
-filepath = "../../Experiment/Other/接口测试用例.xlsx"
+# 通过配置区分获取运行环境的基本数据
+config_sys = 1 # 1为测试环境，2为CITEST环境
+if config_sys == 1:
+
+    #测试地址
+    test_url_mall = test_mall
+    test_url_chome = test_chome
+    test_url_manager = test_manager
+    test_url_file = test_file
+    #用例文件
+    filepath = filepath_test_ny
+    #邮件地址
+    email_adress = email_adress_TEST
+
+elif config_sys == 2:
+
+    #测试地址
+    test_url_mall = citest_mall
+    test_url_chome = citest_chome
+    test_url_manager = citest_manager
+    test_url_file = citest_file
+    #用例文件
+    filepath = filepath_ci_all
+    #邮件地址
+    email_adress = email_adress_CI
+
+else:
+    print("config_sys配置参数错误")
