@@ -8,9 +8,9 @@
 """
 
 import unittest,sys,json
-sys.path.append("../../Commom")
+# sys.path.append("../../Commom")
 import Excel,Plan,Excel_Manage,Data_Structure
-sys.path.append("../../TestDatas")
+# sys.path.append("../../TestDatas")
 import config
 
 Test_Url = config.test_url_mall # mall地址
@@ -485,7 +485,7 @@ class Custom_Order(Plan.Plan):
             print("调用接口结束")
 
     def test_custom_order_case_45(self):
-        """定制单下载-正式文件存在"""
+        """定制单下载-文件存在"""
         try:
             result = Excel.run_xlsx1(filepath, resheetname, "custom_order_case_45", Test_Url)
             self.assertEqual(True, result[0])
@@ -527,7 +527,7 @@ class Custom_Order(Plan.Plan):
             print("调用接口结束")
 
     def test_custom_order_case_49(self):
-        """定制单下载-正式文件不存在"""
+        """定制单下载-文件不存在"""
         try:
             result = Excel.run_xlsx1(filepath, resheetname, "custom_order_case_49", Test_Url)
             self.assertEqual(True, result[0])

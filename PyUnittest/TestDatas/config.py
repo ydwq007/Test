@@ -69,7 +69,7 @@ filepath_ci_all = "../../TestDatas/接口测试用例_CIALL.xlsx"
 
 
 # 通过配置区分获取运行环境的基本数据
-config_sys = 1 # 1为测试环境，2为CITEST环境
+config_sys = 2 # 1为测试环境，2为CITEST环境
 if config_sys == 1:
 
     #测试地址
@@ -78,7 +78,7 @@ if config_sys == 1:
     test_url_manager = test_manager
     test_url_file = test_file
     #用例文件
-    filepath = filepath_test_ny
+    filepath = filepath_test_all
     #邮件地址
     email_adress = email_adress_TEST
 

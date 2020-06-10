@@ -18,7 +18,7 @@ Test_Home = config.test_url_chome
 filepath = config.filepath # 用例文件
 resheetname = "exchange_order" # 用例表名
 
-class Return_Order(Plan.Plan):
+class Exchange_Order(Plan.Plan):
 
     def test_exchange_order_case_01(self):
 

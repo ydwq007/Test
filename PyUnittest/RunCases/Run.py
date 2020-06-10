@@ -7,11 +7,13 @@
 描述：将不同不同目录下的用例复制到同一目录下，执行案例
 """
 
-import unittest,time,sys
-sys.path.append("../Common") #跨目录调用需要配置路径
+import unittest,time,sys,os
+# sys.path.append("../Common") #跨目录调用需要配置路径
+sys.path.append(os.path.abspath(os.path.join(os.getcwd(), ".."))+"/Common")
 import Run_cases,File_Copy
-sys.path.append("../TestResults")
-
+# sys.path.append("../TestResults")
+sys.path.append(os.path.abspath(os.path.join(os.getcwd(), ".."))+"/TestResults")
+sys.path.append(os.path.abspath(os.path.join(os.getcwd(), ".."))+"/TestDatas")
 
 class RunCase(unittest.TestCase):# 继承unittest.TestCase
 

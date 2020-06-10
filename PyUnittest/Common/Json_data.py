@@ -23,7 +23,7 @@ def json_check(jsons,k,v):
                     # print("key为%s,值为%s" % (key,dictionary[key]))
                     # print(True)
                     sign.append(True)
-                    count +=  1
+                    count += 1
                     break
                     # return True,key,dictionary[key]
                 else:
@@ -49,8 +49,10 @@ def json_check(jsons,k,v):
     #     result.update({item:sign.count(item)})
     # print(result)
 
+    # print(sign)
     if sign and True in sign:
         if count >= 1:
+            # print(count)
             return True
     else:
         return False
@@ -86,17 +88,23 @@ if __name__ == "__main__":
     data3 = """{"returnCode":15891637940180000,"returnStatusStr": "待专属服务机构确认","code": 0}"""
 
     json4 = {"code": "1000", "message": "success", "data": {"total": 1, "list": [{"orderId": "15867735860160000", "orderGoodsId": None, "buyerId": None, "oldGoodsName": "2020041001", "oldGoodsPicture": "https://test-pic-2-bucket.obs.cn-north-1.myhuaweicloud.com:443/图2_1573521199093170000.png", "oldPrice": 1, "oldNum": 1, "oldServiceOrgName": "happy店铺", "newGoodsName": None, "newGoodsPicture": None, "newPrice": None, "newNum": None, "newServiceOrgName": None, "buyerOrgId": "7011822724667952339", "buyerOrgName": "16CRM档案客户名称", "agencyOrgId": "-2763071546069595220", "agencyOrgName": "21开发环境商家", "returnCode": "15887309280180000", "returnType": 1, "returnTypeStr": "退货", "returnStatus": 3, "newReturnStatus": None, "returnStatusStr": "退货成功", "creatTime": "2020-05-06 10:08", "orderFinishTime": "2020-04-13 18:27", "returnFinishTime": "2020-05-06 13:49", "licenseUpdateTime": "2020-05-06 08:40", "goodsExpireDate": None, "licenseUpdateFlag": False, "goodsExpireFlag": False, "goodsPackageCertificateUrl": None}], "pageNum": 1, "pageSize": 1, "size": 1, "startRow": 0, "endRow": 0, "pages": 1, "prePage": 0, "nextPage": 0, "isFirstPage": True, "isLastPage": True, "hasPreviousPage": False, "hasNextPage": False, "navigatePages": 8, "navigatepageNums": [1], "navigateFirstPage": 1, "navigateLastPage": 1, "firstPage": 1, "lastPage": 1}}
-    data4 = """{"code": "1000", "message": "success", "orderId": "15867735860160000"}"""
+    data4 = """{"code": "1000", "message": "success", "orderId": "15867735860160000","oldGoodsName": "2020041001"}"""
 
-    json_value = json1
-    data = data1
+    json5 = {"code": "1000", "message": "success", "data": {"returnOrderInfo": {"orderId": "15889017970160000", "orderGoodsId": "1113856", "buyerId": "15730961430270000", "serviceOrgId": "-7422902346933186598", "serviceOrgName": "happy店铺", "goodsName": "2020041001", "goodsPicture": "https://test-pic-2-bucket.obs.cn-north-1.myhuaweicloud.com:443/图2_1573521199093170000.png", "orderGoodsName": None, "orderGoodsPicture": None, "goodsPackageUrl": "更新许可-02_1586508363042170000.syz", "price": 1, "chargingMode": 1, "chargingDuration": "0", "chargingFrequency": "0", "durationUnit": 0, "chargingString": "永久性", "buyerOrgName": "16CRM档案客户名称", "payMethod": "线下通过致远商务订单系统处理", "agencyOrgId": "-2763071546069595220", "agencyOrgName": "21开发环境商家", "returnCode": "15893765730180001", "returnType": 1, "returnTypeStr": "退货", "returnReason": "选错版本", "comment": "", "exchangeGoodsName": None, "newOrderGoodsId": None, "returnStatus": 1, "returnStatusStr": "待专属服务机构确认", "orderFinishTime": "2020-05-08 09:37:17", "returnFinishTime": None}, "actionList": [{"id": 873, "returnCode": "15893765730180001", "userId": "15730961430270000", "userName": "happy01", "realName": "happy01", "avatars": "https://test-pic-2-bucket.obs.cn-north-1.myhuaweicloud.com:443/avatar419040880_1586698958955170000.png", "returnReason": "选错版本", "comment": "", "operationInfo": "订单交易状态：交易完成<br/>退货原因：选错版本<br/>说明：", "createUserId": None, "updateUserId": None, "serverCreateTime": "2020-05-13 21:29", "serverUpdateTime": None, "statusFlag": None}]}}
+    data5 = """{"code": "1000", "message": "success", "orderId": "15889017970160000", "orderGoodsId": "1113856", "buyerId": "15730961430270000"} """
 
-    print(type(json_value))
+    json_value = json4
+    data = data4
+
+    # print(type(json_value["data"]["returnOrderInfo"]["orderId"]))
+    # print(type(json_value))
     # print(json_value)
-    print(type(data))
-    Except = json.loads(data)
+    # print(type(data))
     # print(data)
-
+    Except = json.loads(data)
+    # print(type(Except["orderId"]))
+    # if Except["orderId"] == json_value["data"]["returnOrderInfo"]["orderId"]:
+    #     print("匹配成功")
 
     si = []
     for key in Except.keys():
@@ -106,10 +114,6 @@ if __name__ == "__main__":
             print("检查成功。key为%s，值为%s" % (key,Except[key]))
         else:
             print("检查失败。key为%s，值为%s" % (key,Except[key]))
-
-
-
-
 
     # print(Except)
     # check1 = json_check1(json1,Except) #字符串校对

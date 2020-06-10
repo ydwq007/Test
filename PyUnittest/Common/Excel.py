@@ -112,7 +112,7 @@ def update_header(file_path,sheet_name,host,caseno):
         excel_xl = Excel_Manage.excelprocess_xl()
         excel_xl.write_excel_xls_modify(file_path,line,8,new_header,sheet_name=sheet_name,style=1)
         print("header修改成功")
-        return new_header,line
+        return new_header,line,
     else:
         print("header保持不变")
 
@@ -213,17 +213,22 @@ def run_xlsx1(file_path,sheet_name,row_name,host,host_chome=config.test_url_chom
         #key和value校对
         count = 1
         for key in Except.keys():
-            check = Json_data.json_check(result,key,Except[key]) #key和value校对
-            # print(check)
-            if check == True:
-                print("第%s检查点，检查成功。key为%s，期望值为%s" % (count,key,Except[key]))
+            if Except[key] == "***": # 适合响应值是动态的，无法通过固定值进行匹配
+                # 获取动态值
+                print("第%s检查点，检查成功。key为%s，值为动态值" % (count,key))
                 sign.append(True)
             else:
-                print("第%s检查点，检查失败。key为%s，期望值为%s" % (count,key,Except[key]))
-                sign.append(False)
+                check = Json_data.json_check(result,key,Except[key]) #key和value校对
+                # print(check)
+                if check == True:
+                    print("第%s检查点，检查成功。key为%s，期望值为%s" % (count,key,Except[key]))
+                    sign.append(True)
+                else:
+                    print("第%s检查点，检查失败。key为%s，期望值为%s" % (count,key,Except[key]))
+                    sign.append(False)
             count += 1
         if sign and False not in sign:
-             return True,result
+            return True,result
         else:
             return False,result
             # # 判断期望值
@@ -247,13 +252,13 @@ def run_xlsx1(file_path,sheet_name,row_name,host,host_chome=config.test_url_chom
 
 if __name__ == "__main__":
 
-    file_path = "../../Experiment/Other/接口测试用例-魏奇.xlsx"
+    file_path = "../Experiment/Other/接口测试用例-魏奇.xlsx"
     sheetname = "normal_order_create"
-    caseno = "normal_order_create_case_01"
+    caseno = "normal_order_create_case_03"
     sheetname1 = "normal_order_procedure"
     caseno1 = "normal_order_procedure_case_07"
-    # host_chome = "https://testchome.seeyon.com"
+    host_chome = "https://testchome.seeyon.com"
     host_cloud = "https://testcloud.seeyon.com"
 
     result1 = run_xlsx1(file_path,sheetname,caseno,host_cloud)
-    result1 = run_xlsx1(file_path,sheetname1,caseno1,host_cloud)
+    # result2 = run_xlsx1(file_path,sheetname1,caseno1,host_cloud)
